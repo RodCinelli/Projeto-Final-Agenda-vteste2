@@ -1,3 +1,7 @@
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
 ion-item {
     --background: #f5f5f5;
     /* Cor de fundo do item */
@@ -66,4 +70,8 @@ img {
     display: block;
     /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
     margin-top: 20px;
+}
+
+ion-content{
+    background-color: #333333;
 }
