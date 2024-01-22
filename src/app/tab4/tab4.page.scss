@@ -1,0 +1,90 @@
+#nome {
+    background-color: rgba(131, 113, 99, 0.85);
+    /* Cor de fundo semi-transparente para melhor legibilidade */
+    /* ou qualquer outra cor que você esteja usando */
+    color: #333333;
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-align: center;
+    /* Alinhamento do texto */
+    padding: 5px 20px;
+    /* Reduzir o espaçamento interno (vertical horizontal) */
+    margin: 10px auto;
+    /* Margem superior e inferior reduzida, centralizado horizontalmente */
+    border-radius: 4px;
+    /* Borda suavemente arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para profundidade */
+    max-width: 90%;
+    /* Ajuste para a largura máxima que o elemento deve ocupar */
+    display: block;
+    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
+    margin-top: 20px;
+}
+
+.background-image-container {
+    background: url('/assets/apresentacao/loja_masculina.png') no-repeat center center / cover;
+    border-radius: 15px;
+    width: 90%;
+    height: 550px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-item {
+    --background: rgba(255, 255, 255, 0.9);
+    /* Cor de fundo semi-transparente */
+    /* Cor de fundo do item */
+    --border-radius: 8px;
+    /* Cantos arredondados */
+    --margin-bottom: 10px;
+    /* Espaçamento entre os itens */
+    --padding-start: 20px;
+    /* Espaçamento interno à esquerda */
+    --padding-end: 20px;
+    /* Espaçamento interno à direita */
+    --inner-padding-end: 20px;
+    /* Espaçamento interno à direita dentro do item */
+    --min-height: 56px;
+    /* Altura mínima do item */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra do item */
+    display: flex;
+    /* Flexbox para alinhar os elementos internos */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo do item */
+}
+
+ion-avatar {
+    --ion-avatar-width: 80px;
+    /* Largura do avatar */
+    --ion-avatar-height: 80px;
+    /* Altura do avatar */
+    margin-right: 15px;
+    /* Espaçamento à direita do avatar */
+}
+
+ion-label h2 {
+    font-size: 1.2em;
+    /* Tamanho da fonte do nome do usuário */
+    margin-bottom: 5px;
+    /* Espaçamento abaixo do nome */
+}
+
+ion-label p {
+    font-size: 1em;
+    /* Tamanho da fonte dos parágrafos */
+    color: #888;
+    /* Cor dos parágrafos */
+}
+
+ion-icon {
+    --color: var(--ion-color-primary);
+    /* Cor dos ícones */
+    margin-right: 8px;
+    /* Espaçamento à direita dos ícones */
+}
+

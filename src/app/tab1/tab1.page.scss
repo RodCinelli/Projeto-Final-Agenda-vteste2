@@ -1,0 +1,134 @@
+.logo-image {
+    max-width: 92%;
+    /* Ajuste este valor conforme necessário */
+    border-radius: 4px;
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto;
+    /* Centraliza a imagem se o col for maior que a imagem */
+}
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    /* Ajuste o tamanho conforme necessário */
+    color: #837163;
+    /* Cor das setas */
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 10px;
+    /* Espaçamento da borda esquerda */
+}
+
+.right-arrow {
+    right: 10px;
+    /* Espaçamento da borda direita */
+}
+
+.photo-gallery {
+    position: relative;
+    /* Para posicionar as setas absolutamente em relação à galeria */
+    width: 89%;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+
+
+    img.gallery-image {
+        width: 100%;
+        display: none;
+        /* Ocultar todas as imagens inicialmente */
+        transition: opacity 0.5s ease;
+    }
+}
+
+.carousel-indicators {
+    text-align: center;
+    padding: 10px 0;
+
+    span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .active {
+        background-color: #837163;
+        /* Cor para indicar a imagem atual */
+    }
+}
+
+
+.store-description {
+    background-color: #F5F5F5;
+    /* Complementa a cor do elemento #nome */
+    color: #333;
+    /* Mantém a cor do texto consistente */
+    font-size: 18px;
+    /* Ligeiramente menor que o título para hierarquia visual */
+    text-align: center;
+    /* Continua centralizado */
+    padding: 15px 20px;
+    /* Espaçamento confortável */
+    margin: 20px auto;
+    /* Espaçamento uniforme em torno */
+    border-radius: 4px;
+    /* Cantos arredondados para combinar com #nome */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra para profundidade, consistente com #nome */
+    max-width: 90%;
+    /* Largura máxima para manter o texto legível */
+    line-height: 1.6;
+    /* Espaçamento da linha para melhor leitura */
+    border: 1px solid #837163;
+    /* Borda sutil para definir o elemento, usando a cor do #nome */
+}
+
+.store-description h2 {
+    font-size: 22px;
+    /* Tamanho da fonte maior para o título da seção */
+    margin-bottom: 12px;
+    /* Espaço extra abaixo do título */
+    color: #837163;
+    /* Cor do título para se destacar do texto */
+    font-weight: bold;
+    /* Mantém o peso da fonte para título */
+}
+
+
+#nome {
+    background-color: rgba(131, 113, 99, 0.85);
+    /* ou qualquer outra cor que você esteja usando */
+    color: #333333;
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-align: center;
+    /* Alinhamento do texto */
+    padding: 5px 20px;
+    /* Reduzir o espaçamento interno (vertical horizontal) */
+    margin: 10px auto;
+    /* Margem superior e inferior reduzida, centralizado horizontalmente */
+    border-radius: 4px;
+    /* Borda suavemente arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para profundidade */
+    max-width: 90%;
+    /* Ajuste para a largura máxima que o elemento deve ocupar */
+    display: block;
+    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
+}
+

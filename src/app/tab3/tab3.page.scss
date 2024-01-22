@@ -1,0 +1,82 @@
+ion-item {
+    --background: #f5f5f5;
+    border-radius: 8px;
+    margin: 0 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Aumentando o tamanho da thumbnail para destacar as ofertas */
+ion-thumbnail {
+    --size: 150px;
+    /* Tamanho maior para ofertas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Garantindo que a imagem se ajuste ao novo tamanho da thumbnail */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.product-controls {
+    display: flex;
+    align-items: center;
+
+    ion-button {
+        margin: 0 5px;
+        --padding-start: 0;
+        --padding-end: 0;
+    }
+
+    ion-text {
+        padding: 0 10px;
+    }
+}
+
+#nome {
+    background-color: rgba(131, 113, 99, 0.85);
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 20px;
+    margin: 10px auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para os preços na aba de ofertas */
+
+.preco-e-desconto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco-original {
+    text-decoration: line-through;
+    color: #ff0000;
+    /* Cor indicando preço mais alto/original */
+}
+
+.preco-desconto {
+    color: #008000;
+    /* Cor para destacar o preço com desconto */
+    font-weight: bold;
+}
+
+.desconto-texto {
+    background-color: #32CD32; /* Um verde claro para o fundo do texto de desconto */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 10px; /* Espaçamento à esquerda do texto do desconto */
+}

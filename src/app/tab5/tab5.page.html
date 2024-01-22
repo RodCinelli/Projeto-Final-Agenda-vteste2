@@ -1,0 +1,23 @@
+<!-- Título da Página -->
+<ion-row>
+  <ion-col id="nome">Meu Carrinho</ion-col>
+</ion-row>
+
+<ion-content>
+  <ion-list>
+    <!-- Atualizado para usar getItensCarrinho() -->
+    <ion-item *ngFor="let item of getItensCarrinho(); let i = index">
+      <ion-thumbnail slot="start">
+        <img [src]="item.produto.imagem">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.produto.nome }}</h2>
+        <p>Quantidade: {{ item.quantidade }}</p>
+        <p>Preço: R$ {{ item.produto.preco | number: '1.2-2' }}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="removerDoCarrinho(i)" fill="clear">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+<!-- Título da Página -->
+<ion-row>
+  <ion-col id="nome">Produtos Disponíveis</ion-col>
+</ion-row>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let produto of produtos; let i = index" lines="none">
+      <ion-thumbnail slot="start">
+        <img [src]="produto.imagem">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ produto.nome }}</h2>
+        <p>R$ {{ produto.preco | number: '1.2-2' }}</p> <!-- Formatação de preço -->
+      </ion-label>
+      <div class="product-controls">
+        <ion-button (click)="decrementarProduto(i)" fill="clear">
+          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+        </ion-button>
+        <ion-text>{{ produto.quantidade }}</ion-text>
+        <ion-button (click)="incrementarProduto(i)" fill="clear">
+          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+        </ion-button>
+        <ion-button [disabled]="produto.quantidade === 0" (click)="adicionarAoCarrinho(produto)" fill="clear">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

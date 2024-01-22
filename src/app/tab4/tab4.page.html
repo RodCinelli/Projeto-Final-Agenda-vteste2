@@ -1,0 +1,28 @@
+<!-- Título da Página -->
+<ion-row>
+  <ion-col id="nome">Minha Conta</ion-col>
+</ion-row>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/perfil/Eu.png"> <!-- Substitua pelo caminho do avatar do usuário -->
+      </ion-avatar>
+      <ion-label>
+        <h2>Rodrigo Cinelli</h2>
+        <p>rodcinelli&#64;gmail.com</p>
+        <p>••••••</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" detail (click)="irParaCarrinho()">
+      <ion-icon name="cart" slot="start"></ion-icon>
+      Meu carrinho de compras
+    </ion-item>
+    <ion-item lines="none" (click)="sair()">
+      <ion-icon name="log-out" slot="start"></ion-icon>
+      Sair
+    </ion-item>
+  </ion-list>
+  <div class="background-image-container"></div>
+</ion-content>
