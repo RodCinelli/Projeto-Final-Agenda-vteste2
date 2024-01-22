@@ -1,3 +1,23 @@
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
+ion-header ion-toolbar{
+    background-color: #201E1E;
+    height: 60px;
+}
+
+#logo{
+    margin-top: -20px;
+    width: 100px; 
+    margin-left: 100px;
+}
+
+.barra{
+    background-color: #4B0082;
+    height: 2px;
+}
+
 .logo-image {
     max-width: 92%;
     /* Ajuste este valor conforme necessário */
