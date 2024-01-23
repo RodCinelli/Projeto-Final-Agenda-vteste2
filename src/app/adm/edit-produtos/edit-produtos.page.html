@@ -1,0 +1,71 @@
+<ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+</ion-buttons>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Editar Produtos</ion-card-title>
+      <ion-card-subtitle>área administrativa</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let p of produtos">
+          <ion-thumbnail slot="start">
+            <img src="{{p.image}}" />
+          </ion-thumbnail>
+          <ion-label class="nome-produto">{{ p.nome }}</ion-label>
+          <ion-label class="preco-produto">{{ p.preco }}</ion-label>
+          <ion-button (click)="CarregaProdutos(true, p.id, p.nome, p.descricao, p.preco, p.qtd, p.image)">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-toast [isOpen]="isToastOpen" [message]="mensagem" [duration]="5000"
+    (didDismiss)="isToastOpen = false"></ion-toast>
+</ion-content>
+<ion-modal #modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-content>
+      <div class="block">
+        <h3>Editar Produto</h3>
+        <form>
+          <label>Produto:</label>
+          <ion-input fill="outline" value={{produto.nome}} #productName
+            (change)="this.produto.nome=productName.value"></ion-input>
+          <label>Descrição:</label>
+          <ion-textarea [autoGrow]="true" fill="outline" value={{produto.descricao}} #productDescript
+            (change)="this.produto.descricao=productDescript.value"></ion-textarea>
+          <label>Valor:</label>
+          <ion-input fill="outline" value="{{produto.preco}}" #preco
+            (change)="this.produto.preco=preco.value"></ion-input>
+          <label>Quantidade:</label>
+          <ion-input fill="outline" type="number" value={{produto.qtd}} #Qtd
+            (change)="this.produto.qtd=Qtd.value"></ion-input>
+          <label>Imagem:</label>
+          <ion-img src={{produto.image}}></ion-img>
+          <ion-button fill="outline" expand="block" (click)="isImages=!isImages">
+            <ion-thumbnail>
+              <ion-icon name="camera-outline"></ion-icon>
+            </ion-thumbnail>
+            Foto do produto
+          </ion-button>
+          <div class="block" *ngIf="isImages">
+            <h3>Selecione a imagem do produto</h3>
+            <button (click)="hideShow()">Selecione a imagem</button>
+            <input id="cadImg" type="file" (change)="carregarFoto($event)" label="Imagem" label-placement="floating"
+              fill="solid" placeholder="Selecione a imagem do produto" />
+            <div class="images">
+              <ion-card *ngFor="let img of images" (click)="selectImage(img, modal)">
+                <img src={{img}} />
+              </ion-card>
+            </div>
+          </div>
+          <ion-button expand="block" (click)="EditarProduto()">Editar</ion-button>
+          <ion-button expand="block" (click)="isModalOpen=!isModalOpen">Voltar</ion-button>
+        </form>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

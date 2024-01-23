@@ -1,0 +1,120 @@
+ion-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    /* Bordas arredondadas para o card */
+}
+
+ion-card-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+ion-card-subtitle {
+    color: #666;
+    font-size: 16px;
+}
+
+ion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Distribui o espaço uniformemente */
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.nome-produto {
+    flex-grow: 1;
+    /* Permite que o nome do produto ocupe o espaço disponível */
+    margin-right: 40px;
+    /* Espaço entre o nome do produto e o preço */
+    color: black;
+    font-weight: bold;
+}
+
+.preco-produto {
+    font-weight: bold;
+    /* Opcional: torna o preço em negrito */
+    margin-right: 30px;
+    /* Espaço entre o preço e o ícone da lixeira */
+    color: green;
+}
+
+ion-icon {
+    margin-left: 0px;
+    /* Espaço entre o ícone da lixeira e o preço */
+}
+
+
+ion-item:last-child {
+    border-bottom: none;
+}
+
+ion-thumbnail {
+    width: 60px;
+    /* Largura da miniatura */
+    height: 60px;
+    /* Altura da miniatura */
+    margin-right: 15px;
+}
+
+ion-thumbnail img {
+    border-radius: 50%;
+    /* Imagens redondas */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+ion-label.nome {
+    flex: 1;
+    font-weight: bold;
+    color: #333;
+}
+
+ion-label {
+    margin-right: 10px;
+}
+
+ion-icon {
+    font-size: 25px;
+    color: #888;
+    cursor: pointer;
+}
+
+ion-icon[name="trash"] {
+    color: #ff3b30;
+}
+
+/* Estilos para o toast */
+ion-toast {
+    --background: #fff;
+    --color: #444;
+}
+
+/* Hover effects para itens */
+ion-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Media query para responsividade */
+@media (max-width: 768px) {
+    ion-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+
+    ion-card-title {
+        font-size: 18px;
+    }
+
+    ion-card-subtitle {
+        font-size: 14px;
+    }
+}

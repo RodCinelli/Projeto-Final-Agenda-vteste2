@@ -1,0 +1,90 @@
+<!-- <ion-content>
+  <ion-input label="Nome do Produto" label-placement="floating" fill="solid"
+    placeholder="Digite o nome do produto"></ion-input>
+
+  <ion-input label="Descrição" label-placement="floating" fill="solid"
+    placeholder="Insira uma breve descrição do produto"></ion-input>
+
+  <ion-input [maskito]="PrecoMask" [maskitoElement]="maskPredicate" label="Preço" label-placement="floating"
+    fill="solid" placeholder="Insira o preço do produto"></ion-input>
+
+  <ion-input type="number" label="Quantidade" label-placement="floating" fill="solid"
+    placeholder="Entre com a QTD do produto em estoque"></ion-input>
+
+  <ion-button id="open-modal">Inserir Imagem</ion-button>
+
+
+  <ion-button>Cadastrar Produto</ion-button>
+
+</ion-content> -->
+
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title size="large">Cadastrar Produtos</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+
+    <form>
+      <h1>Cadastrar Produtos</h1>
+      <!-- <ion-list>
+        <ion-item>
+          <ion-input labelPlacement="stacked" label="Email" placeholder="email@domain.com">
+            <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          </ion-input>
+        </ion-item>
+      </ion-list> -->
+
+      <ion-input fill="outline" placeholder="Nome do Produto" #productName> <ion-icon slot="start" name="lock-closed"
+          aria-hidden="true"></ion-icon></ion-input>
+      <ion-input fill="outline" placeholder="Descrição do Produto" #productDescript></ion-input>
+      <ion-input fill="outline" value='{{preco1}}' placeholder="Preço" #preco (keyup)="valorFormat($event.target)"></ion-input>
+      <ion-input fill="outline" type="number" placeholder="Quantidade em Estoque" #Qtd></ion-input>
+      <ion-button fill="outline" expand="block" id="open-modal"><ion-thumbnail><img
+            src="../../../assets/logos/googleLogo.png"></ion-thumbnail>Foto do produto</ion-button>
+
+      <img *ngIf="isImg" src={{imgSrc}} class="imgSrc">
+
+      <ion-button expand="block"
+        (click)="cadastrarProduto(productName.value,productDescript.value,preco.value,Qtd.value)">Cadastrar</ion-button>
+
+    </form>
+
+<ion-toast [isOpen]="isToastOpen" message="{{mensagem}}" [duration]="5000" (didDismiss)="setOpen(false)"></ion-toast>
+
+
+
+
+  </div>
+</ion-content>
+
+
+
+
+
+
+<ion-modal #modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+  <ng-template>
+    <ion-content>
+      <div class="block">
+        <h3>Selecione a imagem do produto</h3>
+        <button (click)="hideShow()">Selecione a imagem</button>
+        <input id="cadImg" type="file" (change)="carregarFoto($event)" label="Imagem" label-placement="floating"
+          fill="solid" placeholder="Selecione a imagem do produto" />
+
+        <div class="images">
+          <ion-card *ngFor="let img of images" (click)="selectImage(img, modal)">
+            <img src={{img}} />
+          </ion-card>
+        </div>
+
+      </div>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
