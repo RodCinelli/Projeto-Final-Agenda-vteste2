@@ -2,20 +2,21 @@ ion-content{
     --ion-background-color: #201E1E;
 }
 
-ion-header ion-toolbar{
-    background-color: #201E1E;
-    height: 60px;
+.logoBarra{
+    margin: auto;
+    text-align: center;
+    height: 70px;
 }
 
-#logo{
-    margin-top: -20px;
-    width: 100px; 
-    margin-left: 100px;
+.logo{
+    width: 100px;
+    margin-top: -14px;
 }
 
 .barra{
     background-color: #4B0082;
     height: 2px;
+ 
 }
 
 .logo-image {
