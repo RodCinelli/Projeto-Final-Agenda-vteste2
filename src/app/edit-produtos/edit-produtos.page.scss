@@ -1,7 +1,12 @@
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
 ion-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 5px;
+    background-color: #333333;
     /* Bordas arredondadas para o card */
 }
 
@@ -26,6 +31,7 @@ ion-item {
     align-items: center;
     border-bottom: 1px solid #e7e7e7;
     transition: background-color 0.3s;
+    background-color: #333333;
 }
 
 ion-item:last-child {

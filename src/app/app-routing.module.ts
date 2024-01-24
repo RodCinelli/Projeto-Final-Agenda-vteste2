@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CadProdutosPage } from './adm/cad-produtos/cad-produtos.page';
-import { DeleteProdutosPage } from './adm/delete-produtos/delete-produtos.page';
-import { EditProdutosPage } from './adm/edit-produtos/edit-produtos.page';
 
 
 const routes: Routes = [
@@ -20,16 +17,17 @@ const routes: Routes = [
   },
   {
     path: 'cad-produtos',
-    loadChildren: () => import('./adm/cad-produtos/cad-produtos.module').then( m => m.CadProdutosPageModule)
+    loadChildren: () => import('./cad-produtos/cad-produtos.module').then( m => m.CadProdutosPageModule)
   },
   {
     path: 'delete-produtos',
-    loadChildren: () => import('./adm/delete-produtos/delete-produtos.module').then( m => m.DeleteProdutosPageModule)
+    loadChildren: () => import('./delete-produtos/delete-produtos.module').then( m => m.DeleteProdutosPageModule)
   },
   {
     path: 'edit-produtos',
-    loadChildren: () => import('./adm/edit-produtos/edit-produtos.module').then( m => m.EditProdutosPageModule)
+    loadChildren: () => import('./edit-produtos/edit-produtos.module').then( m => m.EditProdutosPageModule)
   }
+
 
 ];
 @NgModule({
