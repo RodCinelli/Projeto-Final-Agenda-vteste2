@@ -2,8 +2,12 @@ ion-content{
     --ion-background-color: #201E1E;
 }
 
+ion-row{
+    background-color: #201E1E;
+}
+
 ion-item {
-    --background: #f5f5f5;
+    --background: #373636;
     /* Cor de fundo do item */
     border-radius: 8px;
     /* Cantos arredondados */
@@ -46,10 +50,31 @@ img {
     }
 }
 
+.product-controls ion-button {
+    color: #fff; /* Cor do ícone, se necessário */
+}
+
+.produto-info {
+    color: #fff; /* Cor do texto, se necessário */
+}
+
+.custom-button {
+    color: #fff; /* Cor do ícone, se necessário */
+}
+
+.preco-produto {
+    color: #32CD32; /* Substitua #corDoTexto pela cor do texto desejada */  
+}
+
+.quantidade-produto {
+    color: #32CD32; /* Esta é a tonalidade de verde que você mencionou */
+    /* Aqui você pode adicionar outras propriedades de estilo, se necessário */
+}
+
 #nome {
-    background-color: rgba(131, 113, 99, 0.85);
+    background-color: #4b0082;
     /* ou qualquer outra cor que você esteja usando */
-    color: #333333;
+    color: #fff;
     /* Cor do texto */
     font-size: 24px;
     /* Tamanho da fonte */
@@ -70,8 +95,4 @@ img {
     display: block;
     /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
     margin-top: 20px;
-}
-
-ion-content{
-    background-color: #333333;
 }
