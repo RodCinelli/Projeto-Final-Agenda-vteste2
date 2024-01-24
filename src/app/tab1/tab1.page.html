@@ -1,16 +1,18 @@
 <ion-content>
 
-  <ion-header>
-    <div class="logoBarra">
+  <ion-header style="height: 80px;">
+    <div class="logo-container">
       <img class="logo" src="assets/logo_agendalocal.png">
+      <img class="map" src="assets/locate.png" style="width: 25px;"><h6 class="logo-text">Rio de Janeiro</h6>
+
     </div>
   </ion-header>
-    <div class="barra"></div>
-  
+  <div class="barra"></div>
 
 <br>
 
   <div class="photo-gallery" #photoGallery>
+
     <!-- Seta para Esquerda -->
     <ion-icon name="chevron-back-circle" class="gallery-arrow left-arrow" (click)="previousImage()"></ion-icon>
     <img src="assets/apresentacao/loja_masculina.png" alt="Imagem da Nossa loja" #galleryImage>
@@ -19,14 +21,15 @@
     <img src="assets/apresentacao/escolha_de_produtos.png" alt="Um cliente escolhendo produtos" #galleryImage>
     <!-- Seta para Direita -->
     <ion-icon name="chevron-forward-circle" class="gallery-arrow right-arrow" (click)="nextImage()"></ion-icon>
+
+    <div class="carousel-indicators" style="margin-top: -13%;">
+      <span *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
+        (click)="showImage(i)"></span>
+    </div>
+
   </div>
 
-
-  <!-- Indicadores do Carrossel -->
-  <div class="carousel-indicators">
-    <span *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
-      (click)="showImage(i)"></span>
-  </div>
+  
 
   <!-- Descrição da Loja -->
   <div class="store-description">

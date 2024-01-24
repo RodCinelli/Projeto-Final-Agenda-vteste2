@@ -2,16 +2,30 @@ ion-content{
     --ion-background-color: #201E1E;
 }
 
-.logoBarra{
-    margin: auto;
-    text-align: center;
-    height: 70px;
-}
 
-.logo{
-    width: 100px;
-    margin-top: -14px;
-}
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100%; /* Adapte conforme necessário */
+  }
+  
+  .logo-text {
+    color: white;
+    
+    font-size: small;
+    
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-right: auto;
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+  }
+  
 
 .barra{
     background-color: #4B0082;
