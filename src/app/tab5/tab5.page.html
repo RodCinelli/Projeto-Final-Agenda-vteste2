@@ -10,12 +10,13 @@
       <ion-thumbnail slot="start">
         <img [src]="item.produto.imagem">
       </ion-thumbnail>
-      <ion-label>
+      <ion-label class="produto-info">
         <h2>{{ item.produto.nome }}</h2>
-        <p>Quantidade: {{ item.quantidade }}</p>
-        <p>Preço: R$ {{ item.produto.preco | number: '1.2-2' }}</p>
+        <br>
+        <p class="quantidade">Quantidade: {{ item.quantidade }}</p>
+        <p class="preco">R$ {{ item.produto.preco | number: '1.2-2' }}</p>
       </ion-label>
-      <ion-button slot="end" (click)="removerDoCarrinho(i)" fill="clear">
+      <ion-button class="button" slot="end" (click)="removerDoCarrinho(i)" fill="clear">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
