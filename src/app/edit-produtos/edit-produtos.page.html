@@ -2,12 +2,11 @@
   <ion-menu-button></ion-menu-button>
 </ion-buttons>
 <ion-content>
-  <ion-card>
     <ion-card-header>
       <ion-card-title>Editar Produtos</ion-card-title>
       <ion-card-subtitle>área administrativa</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>
+
       <ion-list>
         <ion-item *ngFor="let p of produtos">
           <ion-thumbnail slot="start">
@@ -20,8 +19,7 @@
           </ion-button>
         </ion-item>
       </ion-list>
-    </ion-card-content>
-  </ion-card>
+
   <ion-toast [isOpen]="isToastOpen" [message]="mensagem" [duration]="5000"
     (didDismiss)="isToastOpen = false"></ion-toast>
 </ion-content>
