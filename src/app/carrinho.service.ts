@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ProdutoTab2 } from './models/produtotab2.model';
 import { ProdutoTab3 } from './models/produtotab3.model';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 type ProdutoCarrinho = ProdutoTab2 | ProdutoTab3;
 
 interface ItemCarrinho {
+  id?: string;
   produto: ProdutoCarrinho;
   quantidade: number;
 }
@@ -15,20 +16,44 @@ interface ItemCarrinho {
 export class CarrinhoService {
   private itensCarrinho: ItemCarrinho[] = [];
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { 
+    this.carregarItensCarrinho();
+  }
+
+  carregarItensCarrinho() {
+    this.firestore.collection<ItemCarrinho>('carrinho').snapshotChanges().subscribe(snapshot => {
+      this.itensCarrinho = snapshot.map(doc => {
+        const data = doc.payload.doc.data() as ItemCarrinho;
+        const id = doc.payload.doc.id;
+        return { id, ...data };
+      });
+    });
+  }
+
+  salvarItensCarrinho() {
+    this.itensCarrinho.forEach(item => {
+      this.firestore.collection('carrinho').doc(item.id).set(item);
+    });
+  }
 
   adicionarAoCarrinho(produto: ProdutoCarrinho) {
     const itemExistente = this.itensCarrinho.find(item => item.produto.nome === produto.nome);
     if (itemExistente) {
       itemExistente.quantidade += produto.quantidade;
     } else {
-      this.itensCarrinho.push({ produto, quantidade: produto.quantidade });
+      const id = this.firestore.createId();
+      this.itensCarrinho.push({ id, produto, quantidade: produto.quantidade });
     }
     // Reseta a quantidade do produto após adicioná-lo ao carrinho
     produto.quantidade = 0;
+    this.salvarItensCarrinho();
   }
 
   removerItem(index: number) {
+    const item = this.itensCarrinho[index];
+    if (item.id) {
+      this.firestore.collection('carrinho').doc(item.id).delete();
+    }
     this.itensCarrinho.splice(index, 1);
   }
 
