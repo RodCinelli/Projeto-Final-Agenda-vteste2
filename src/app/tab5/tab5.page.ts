@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { CarrinhoService } from '../carrinho.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class Tab5Page implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private navCtrl: NavController // Adiciona o NavController
   ) {}
 
   ngOnInit() {
@@ -37,5 +38,10 @@ export class Tab5Page implements OnInit {
       color: 'danger' // A cor do toast está definida para vermelho
     });
     toast.present();
+  }
+
+  // Função para navegar até a página de pagamento
+  irParaPagamento() {
+    this.navCtrl.navigateForward('/pagamento');
   }
 }

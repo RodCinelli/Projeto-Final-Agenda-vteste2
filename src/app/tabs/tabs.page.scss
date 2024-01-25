@@ -4,35 +4,34 @@
 
 .icone {
     color: #B05DFF;
+    font-size: 1.9em; /* Aumenta o tamanho do ícone */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Suaviza a transição do efeito */
 }
 
 .icone:hover, .icone:focus {
-    transform: scale(1.1);
-    /* Aumenta o tamanho do ícone */
+    transform: scale(1.2); /* Aumenta ligeiramente mais o ícone ao passar o mouse */
     box-shadow: 0 0 8px #B05DFF;
-    /* Adiciona uma sombra com a cor desejada */
 }
 
 ion-label {
     color: #B05DFF; /* Cor do texto dos ícones */
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Sombra de texto suave para contraste */
+    font-size: 1em; /* Aumenta o tamanho da letra */
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     transition: text-shadow 0.3s ease;
 }
 
 ion-label:hover, ion-label:focus {
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 ion-tab-bar {
-    border: 3px solid #B05DFF; /* Aumenta a espessura da borda e muda a cor para vermelho */
-    border-radius: 0px; /* Mantém os cantos da borda quadrados */
-    padding: 10px; /* Mantém o espaço entre os ícones e a borda */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra à barra */
+    border: 3px solid #B05DFF;
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Assegurando que a cor dos ícones permaneça consistente */
+/* Mantendo a cor dos ícones consistente */
 ion-icon {
     color: inherit;
 }

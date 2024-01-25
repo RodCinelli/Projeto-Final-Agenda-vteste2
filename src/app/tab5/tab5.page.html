@@ -23,7 +23,16 @@
   </ion-list>
   <ion-row *ngIf="getItensCarrinho().length > 0">
     <ion-col>
-      <h2 class="total-carrinho">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
+        <h2 class="total-carrinho">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
     </ion-col>
-  </ion-row>
+</ion-row>
+
+<!-- Botão Finalizar Compra -->
+<ion-row>
+    <ion-col>
+        <ion-button expand="full" color="success" class="finalizar-compra" (click)="irParaPagamento()">
+            Finalizar Compra
+        </ion-button>
+    </ion-col>
+</ion-row>
 </ion-content>
