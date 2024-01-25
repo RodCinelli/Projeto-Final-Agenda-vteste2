@@ -23,6 +23,10 @@ export class Tab5Page implements OnInit {
     return this.carrinhoService.getItensCarrinho();
   }
 
+  getTotalCarrinho() {
+    return this.carrinhoService.getTotalCarrinho();
+  }
+
   // Remove o item selecionado do carrinho e exibe um toast de confirmação
   async removerDoCarrinho(index: number) {
     this.carrinhoService.removerItem(index);

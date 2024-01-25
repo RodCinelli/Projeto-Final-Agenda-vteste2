@@ -20,17 +20,17 @@
         </div>
       </ion-label>
       <div class="product-controls">
-        <ion-button (click)="decrementarProduto(i)" fill="clear">
-          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+        <ion-button class="custom-button" (click)="decrementarProduto(i)" fill="clear">
+            <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
         </ion-button>
         <ion-text>{{ produto.quantidade }}</ion-text>
-        <ion-button (click)="incrementarProduto(i)" fill="clear">
-          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+        <ion-button class="custom-button" (click)="incrementarProduto(i)" fill="clear">
+            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
         </ion-button>
-        <ion-button [disabled]="produto.quantidade === 0" (click)="adicionarAoCarrinho(produto)" fill="clear">
-          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        <ion-button class="custom-button" [disabled]="produto.quantidade === 0" (click)="adicionarAoCarrinho(produto)" fill="clear">
+            <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
-      </div>
+    </div>
     </ion-item>
   </ion-list>
 </ion-content>

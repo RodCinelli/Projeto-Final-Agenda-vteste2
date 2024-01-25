@@ -25,6 +25,13 @@ ion-label:hover, ion-label:focus {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
 }
 
+ion-tab-bar {
+    border: 3px solid #B05DFF; /* Aumenta a espessura da borda e muda a cor para vermelho */
+    border-radius: 0px; /* Mantém os cantos da borda quadrados */
+    padding: 10px; /* Mantém o espaço entre os ícones e a borda */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra à barra */
+}
+
 /* Assegurando que a cor dos ícones permaneça consistente */
 ion-icon {
     color: inherit;

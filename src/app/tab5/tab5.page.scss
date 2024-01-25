@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 ion-content{
     --ion-background-color: #201E1E;
 }
@@ -75,6 +77,14 @@ img {
 
 .button:hover ion-icon, .button:focus ion-icon {
     color: #ff0000; /* Muda a cor do ícone ao passar o mouse */
+}
+
+.total-carrinho {
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #nome {

@@ -36,5 +36,7 @@ export class CarrinhoService {
     return this.itensCarrinho;
   }
 
-  // Aqui você pode adicionar outros métodos que achar necessário
+  getTotalCarrinho() {
+    return this.itensCarrinho.reduce((total, item) => total + (item.produto.preco * item.quantidade), 0);
+  }
 }
