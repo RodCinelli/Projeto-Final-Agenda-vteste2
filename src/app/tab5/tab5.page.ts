@@ -12,11 +12,11 @@ export class Tab5Page implements OnInit {
   constructor(
     private carrinhoService: CarrinhoService,
     private toastController: ToastController,
-    private navCtrl: NavController // Adiciona o NavController
+    private navCtrl: NavController
   ) {}
 
   ngOnInit() {
-    // Aqui você pode carregar dados quando a página for iniciada, se necessário
+    // Inicialização
   }
 
   // Retorna os itens do carrinho para serem exibidos no template
@@ -24,6 +24,7 @@ export class Tab5Page implements OnInit {
     return this.carrinhoService.getItensCarrinho();
   }
 
+  // Retorna o total do carrinho
   getTotalCarrinho() {
     return this.carrinhoService.getTotalCarrinho();
   }
@@ -35,7 +36,7 @@ export class Tab5Page implements OnInit {
       message: 'Item removido do carrinho!',
       duration: 2000,
       position: 'top',
-      color: 'danger' // A cor do toast está definida para vermelho
+      color: 'danger'
     });
     toast.present();
   }
@@ -43,5 +44,10 @@ export class Tab5Page implements OnInit {
   // Função para navegar até a página de pagamento
   irParaPagamento() {
     this.navCtrl.navigateForward('/pagamento');
+  }
+
+  // Função para verificar se há itens no carrinho
+  temItensNoCarrinho(): boolean {
+    return this.getItensCarrinho().length > 0;
   }
 }

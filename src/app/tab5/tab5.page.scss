@@ -58,7 +58,7 @@ img {
     color: #32CD32;
 }
 
-.button {
+.button-lixeira {
     color: #ff0000; /* Cor existente */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Suaviza as transições para transformação e sombra */
@@ -70,7 +70,7 @@ img {
     /* Suaviza a transição da cor */
 }
 
-.button:hover, .button:focus {
+.button-lixeira:hover, .button-lixeira:focus {
     transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
     box-shadow: 0 0 10px #ff0000; /* Adiciona uma sombra para destaque */
 }
@@ -79,18 +79,28 @@ img {
     color: #ff0000; /* Muda a cor do ícone ao passar o mouse */
 }
 
+/* Estilização para o botão Finalizar Compra */
+ion-button.finalizar-compra {
+    --background: #4CAF50; /* Cor de fundo verde */
+    --color: white; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    margin: 10px 0; /* Margem acima e abaixo do botão */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    transition: all 0.3s; /* Transição suave para efeitos */
+}
+
+ion-button.finalizar-compra:hover {
+    --background: #45a049; /* Cor de fundo um pouco mais escura ao passar o mouse */
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.24); /* Sombra maior para efeito de elevação */
+    transform: scale(1.05); /* Ligeiro aumento no tamanho */
+}
+
 .total-carrinho {
     color: white;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.finalizar-compra {
-    margin: 20px;
-    font-weight: bold;
-    /* Adicione quaisquer outras estilizações que desejar */
 }
 
 #nome {

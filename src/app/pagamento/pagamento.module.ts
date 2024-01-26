@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { PagamentoPageRoutingModule } from './pagamento-routing.module';
-
-import { PagamentoPage } from './pagamento.page';
+import { PagamentoPage } from './pagamento.page'; // Importe PagamentoPage
 
 @NgModule({
   imports: [
@@ -15,13 +12,6 @@ import { PagamentoPage } from './pagamento.page';
     IonicModule,
     PagamentoPageRoutingModule
   ],
-  declarations: [PagamentoPage]
+  declarations: [PagamentoPage] // Declare PagamentoPage aqui
 })
-export class PagamentoPage {
-  metodoPagamento: string;
-
-  confirmarPagamento() {
-      console.log('Método de pagamento escolhido:', this.metodoPagamento);
-      // Aqui você pode adicionar a lógica para processar o pagamento
-  }
-}
+export class PagamentoPageModule {} // Sem a declaração de classe aqui

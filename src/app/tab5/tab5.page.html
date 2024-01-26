@@ -16,23 +16,23 @@
         <p class="quantidade">Quantidade: {{ item.quantidade }}</p>
         <p class="preco">R$ {{ item.produto.preco | number: '1.2-2' }}</p>
       </ion-label>
-      <ion-button class="button" slot="end" (click)="removerDoCarrinho(i)" fill="clear">
+      <ion-button class="button-lixeira" slot="end" (click)="removerDoCarrinho(i)" fill="clear">
         <ion-icon name="trash-outline"></ion-icon>
-      </ion-button>
+      </ion-button>      
     </ion-item>
   </ion-list>
   <ion-row *ngIf="getItensCarrinho().length > 0">
     <ion-col>
         <h2 class="total-carrinho">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
     </ion-col>
-</ion-row>
+  </ion-row>
 
-<!-- Botão Finalizar Compra -->
+  <!-- Botão Finalizar Compra -->
 <ion-row>
     <ion-col>
-        <ion-button expand="full" color="success" class="finalizar-compra" (click)="irParaPagamento()">
-            Finalizar Compra
-        </ion-button>
+      <ion-button expand="full" class="finalizar-compra" (click)="irParaPagamento()" *ngIf="temItensNoCarrinho()">
+        Finalizar Compra
+      </ion-button>
     </ion-col>
-</ion-row>
+  </ion-row>
 </ion-content>
