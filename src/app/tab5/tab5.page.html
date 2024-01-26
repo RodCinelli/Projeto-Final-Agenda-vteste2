@@ -1,9 +1,22 @@
-<!-- Título da Página -->
+
+
 <ion-content>
+
+
 
 <ion-row>
   <ion-col id="nome">Meu Carrinho</ion-col>
 </ion-row>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="center">
+  <ion-fab-button>
+
+     
+        <h2 class="total-carrinho" *ngIf="getItensCarrinho().length > 0">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
+  
+
+  </ion-fab-button>
+</ion-fab>
 
   <ion-list>
     <!-- Atualizado para usar getItensCarrinho() -->
@@ -21,11 +34,12 @@
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
-    <ion-row *ngIf="getItensCarrinho().length > 0">
-      <ion-col>
-        <h2 class="total-carrinho">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
-      </ion-col>
-    </ion-row>
+
+    
+
+
   </ion-list>
 
 </ion-content>
+
+
