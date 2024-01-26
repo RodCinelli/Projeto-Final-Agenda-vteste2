@@ -1,0 +1,12 @@
+ion-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999; /* Ajuste o valor se necessário */
+    height: 100px;
+    --ion-background-color: white;
+  }
+  
+  ion-content {
+    margin-top: 56px; /* Ajuste essa margem de acordo com a altura do cabeçalho */
+  }

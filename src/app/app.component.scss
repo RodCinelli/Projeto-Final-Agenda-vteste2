@@ -1,0 +1,29 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+     /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100%; /* Adapte conforme necessário */
+  }
+  
+  .logo-text {
+    padding-left: 32%;
+    color: white;
+    font-size: small;
+  }
+  
+  .logo {
+    max-width: 100px;
+    width: 100px;
+/*     margin-right: auto; */
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+    width: 30px;
+  }
+
+.pin{
+  width: 25px;
+}
+
+  

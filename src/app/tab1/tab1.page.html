@@ -1,36 +1,28 @@
 <ion-content>
 
+<br>
 
-  
+<div class="slide">
 
-  <!-- Grid para Layout -->
-  <ion-grid>
-    <!-- Imagem do Logo -->
-    <ion-row>
-      <ion-col id="fotoPerfilCol">
-        <img src="assets/apresentacao/cinelli_store_logo.png" alt="Cinelli Store Logo" class="logo-image">
-      </ion-col>
-    </ion-row>
-
-    <!-- Título da Página -->
-    <ion-row>
-      <ion-col id="nome">Vestuário Masculino</ion-col>
-    </ion-row>
-  </ion-grid>
-
-
-  <!-- Galeria de Fotos -->
   <div class="photo-gallery" #photoGallery>
-    <swiper-container>
-      <swiper-slide>    <img src="assets/apresentacao/loja_masculina.png" alt="Imagem da Nossa loja" #galleryImage></swiper-slide>
-      <swiper-slide><img src="assets/apresentacao/roupas_masculinas.png" alt="Algum de nossos produtos" #galleryImage></swiper-slide>
-      <swiper-slide><img src="assets/apresentacao/roupas_masculinas2.png" alt="Algum de nossos produtos" #galleryImage></swiper-slide>
-      <swiper-slide><img src="assets/apresentacao/escolha_de_produtos.png" alt="Um cliente escolhendo produtos" #galleryImage></swiper-slide>
-    </swiper-container>
+
+    <!-- Seta para Esquerda -->
+    <ion-icon name="chevron-back-circle" class="gallery-arrow left-arrow" (click)="previousImage()"></ion-icon>
+    <img src="assets/apresentacao/loja_masculina.png" alt="Imagem da Nossa loja" #galleryImage>
+    <img src="assets/apresentacao/roupas_masculinas.png" alt="Algum de nossos produtos" #galleryImage>
+    <img src="assets/apresentacao/roupas_masculinas2.png" alt="Algum de nossos produtos" #galleryImage>
+    <img src="assets/apresentacao/escolha_de_produtos.png" alt="Um cliente escolhendo produtos" #galleryImage>
+    <!-- Seta para Direita -->
+    <ion-icon name="chevron-forward-circle" class="gallery-arrow right-arrow" (click)="nextImage()"></ion-icon>
+
+    <div class="carousel-indicators" style="margin-top: -13%;">
+      <span *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
+        (click)="showImage(i)"></span>
+    </div>
+
   </div>
 
-
-
+  
 
   <!-- Descrição da Loja -->
   <div class="store-description">
@@ -38,4 +30,5 @@
     <p>A Cinelli Store oferece uma ampla gama de roupas e calçados masculinos. Visite-nos para descobrir as últimas
       tendências!</p>
   </div>
+</div>
 </ion-content>

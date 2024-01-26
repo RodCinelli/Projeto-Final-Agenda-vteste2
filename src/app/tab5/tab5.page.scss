@@ -1,6 +1,41 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100%; /* Adapte conforme necessário */
+  }
+  
+  .logo-text {
+    color: white;
+    
+    font-size: small;
+    
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-right: auto;
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
+ion-row{
+    background-color: #201E1E;
+}
+
 ion-item {
-    --background: #f5f5f5;
+    --background: #373636;
+    /* Cor de fundo do item */
     border-radius: 8px;
+    /* Cantos arredondados */
     margin: 0 0;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -34,17 +69,88 @@ img {
     }
 }
 
-#nome {
-    background-color: rgba(131, 113, 99, 0.85);
-    color: #333333;
-    font-size: 24px;
-    font-weight: bold;
+.produto-info {
+    color: #fff; /* Cor do texto, se necessário */
+}
+
+.quantidade{
+    color: #ff0000;
+}
+
+.preco{
+    color: #32CD32;
+}
+
+.button {
+    color: #ff0000; /* Cor existente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza as transições para transformação e sombra */
+}
+
+.button ion-icon {
+    font-size: 1.5em; /* Ajusta o tamanho do ícone */
+    transition: color 0.3s ease;
+    /* Suaviza a transição da cor */
+}
+
+.button:hover, .button:focus {
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
+    box-shadow: 0 0 10px #ff0000; /* Adiciona uma sombra para destaque */
+}
+
+.button:hover ion-icon, .button:focus ion-icon {
+    color: #ff0000; /* Muda a cor do ícone ao passar o mouse */
+}
+
+.total-carrinho {
+    background-color: #4b0082;
+    max-width: 220px;
+    color: white;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* Tamanho da fonte */
+        font-weight: bold;
+        /* Peso da fonte */
+        text-align: center;
+        /* Alinhamento do texto */
+        padding: 5px 20px;
+        /* Reduzir o espaçamento interno (vertical horizontal) */
+        margin: 10px auto;
+        /* Margem superior e inferior reduzida, centralizado horizontalmente */
+        border-radius: 4px;
+        /* Borda suavemente arredondada */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Sombra sutil para profundidade */
+        /* Ajuste para a largura máxima que o elemento deve ocupar */
+        display: block;
+
+}
+
+#nome {
+    background-color: #4b0082;
+    /* ou qualquer outra cor que você esteja usando */
+    color: #fff;
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-align: center;
+    /* Alinhamento do texto */
     padding: 5px 20px;
+    /* Reduzir o espaçamento interno (vertical horizontal) */
     margin: 10px auto;
+    /* Margem superior e inferior reduzida, centralizado horizontalmente */
     border-radius: 4px;
+    /* Borda suavemente arredondada */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para profundidade */
     max-width: 90%;
+    /* Ajuste para a largura máxima que o elemento deve ocupar */
     display: block;
+    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
     margin-top: 20px;
 }
+

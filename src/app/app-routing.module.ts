@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
   },
   {
-    path: 'cad-produtos',
+    path: 'tabs/cad-produtos',
     loadChildren: () => import('./cad-produtos/cad-produtos.module').then( m => m.CadProdutosPageModule)
   },
   {

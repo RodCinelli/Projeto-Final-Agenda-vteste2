@@ -13,3 +13,25 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999; /* Ajuste o valor se necessário */
+    background-color: #111010;
+  }
+
+  ion-row{
+    margin-top: 80px;
+    background-color: #201E1E;
+}
+
+.barra{
+  background-color: #B05DFF;
+  height: 2px;
+}
+
+ion-content{
+  --ion-background-color: #201E1E;
+}

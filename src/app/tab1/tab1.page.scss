@@ -1,3 +1,34 @@
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
+.slide{
+    margin-top: 80px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100%; /* Adapte conforme necessário */
+  }
+  
+  .logo-text {
+    color: white;
+    
+    font-size: small;
+    
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-right: auto;
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+  }
+  
 .logo-image {
     max-width: 92%;
     /* Ajuste este valor conforme necessário */
@@ -31,7 +62,6 @@
 }
 
 .photo-gallery {
-    position: relative;
     /* Para posicionar as setas absolutamente em relação à galeria */
     width: 89%;
     margin: 0 auto 20px auto;
@@ -131,4 +161,3 @@
     display: block;
     /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
 }
-

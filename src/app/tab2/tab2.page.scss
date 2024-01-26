@@ -1,3 +1,31 @@
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100px; /* Adapte conforme necessário */
+    background-color: #201E1E;
+  }
+  
+  .logo-text {
+    color: white;
+    
+    font-size: small;
+    
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+  }
+  
+
 ion-content{
     --ion-background-color: #201E1E;
 }
@@ -59,11 +87,28 @@ img {
 }
 
 .custom-button {
-    color: #fff; /* Cor do ícone, se necessário */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza as transições para transformação e sombra */
 }
 
+.custom-button ion-icon {
+    font-size: 1.8em; /* Ajusta o tamanho do ícone */
+    transition: color 0.3s ease;
+    /* Suaviza a transição da cor */
+}
+
+.custom-button:hover, .custom-button:focus {
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
+    box-shadow: 0 0 10px #fff; /* Adiciona uma sombra para destaque */
+}
+
+.custom-button:hover ion-icon, .custom-button:focus ion-icon {
+    color: #fff; /* Muda a cor do ícone ao passar o mouse */
+}
+
+
 .preco-produto {
-    color: #32CD32; /* Substitua #corDoTexto pela cor do texto desejada */  
+    color: #32CD32; /* Substitua #corDoTexto pela cor do texto desejada */   
 }
 
 .quantidade-produto {

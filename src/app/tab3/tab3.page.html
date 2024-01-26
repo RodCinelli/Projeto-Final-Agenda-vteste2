@@ -1,36 +1,38 @@
 <!-- Título da Página -->
+<ion-content>
+
 <ion-row>
   <ion-col id="nome">Nossas Ofertas !</ion-col>
 </ion-row>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let produto of produtos; let i = index" lines="none">
-      <ion-thumbnail slot="start">
-        <img [src]="produto.imagem" class="produto-imagem">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ produto.nome }}</h2> <br>
-        <div class="preco-e-desconto">
-          <div>
-            <span class="preco-original">R$ {{ produto.precoOriginal | number:'1.2-2' }}</span> <br>
-            <span class="preco-desconto">R$ {{ produto.preco | number:'1.2-2' }}</span>
-          </div>
-          <div class="desconto-texto">{{ calcularDesconto(produto) }}</div>
+
+<ion-list>
+  <ion-item *ngFor="let produto of produtos; let i = index" lines="none">
+    <ion-thumbnail slot="start">
+      <img [src]="produto.imagem" class="produto-imagem">
+    </ion-thumbnail>
+    <ion-label class="produto-info">
+      <h2>{{ produto.nome }}</h2> <br>
+      <div class="preco-e-desconto">
+        <div>
+          <span class="preco-original">R$ {{ produto.precoOriginal | number:'1.2-2' }}</span> <br>
+          <span class="preco-desconto">R$ {{ produto.preco | number:'1.2-2' }}</span>
         </div>
-      </ion-label>
-      <div class="product-controls">
-        <ion-button (click)="decrementarProduto(i)" fill="clear">
-          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
-        </ion-button>
-        <ion-text>{{ produto.quantidade }}</ion-text>
-        <ion-button (click)="incrementarProduto(i)" fill="clear">
-          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
-        </ion-button>
-        <ion-button [disabled]="produto.quantidade === 0" (click)="adicionarAoCarrinho(produto)" fill="clear">
-          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-        </ion-button>
+        <div class="desconto-texto">{{ calcularDesconto(produto) }}</div>
       </div>
-    </ion-item>
-  </ion-list>
+    </ion-label>
+    <div class="product-controls">
+      <ion-button class="custom-button" (click)="decrementarProduto(i)" fill="clear">
+          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+      </ion-button>
+      <ion-text>{{ produto.quantidade }}</ion-text>
+      <ion-button class="custom-button" (click)="incrementarProduto(i)" fill="clear">
+          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="custom-button" [disabled]="produto.quantidade === 0" (click)="adicionarAoCarrinho(produto)" fill="clear">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+  </div>
+  </ion-item>
+</ion-list>
 </ion-content>

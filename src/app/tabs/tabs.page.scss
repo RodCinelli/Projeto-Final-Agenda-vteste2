@@ -1,11 +1,38 @@
-.tabs{
-    --ion-background-color: #201E1E;
+.tabs {
+    --ion-background-color: #111010;
 }
 
-.icone{
-    color: rgb(225, 0, 255);
+.icone {
+    color: #B05DFF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza a transição do efeito */
 }
 
-.icone, :focus{
-    color: rgb(225, 0, 255);
+.icone:hover, .icone:focus {
+    transform: scale(1.1);
+    /* Aumenta o tamanho do ícone */
+    box-shadow: 0 0 8px #B05DFF;
+    /* Adiciona uma sombra com a cor desejada */
+}
+
+ion-label {
+    color: #B05DFF; /* Cor do texto dos ícones */
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Sombra de texto suave para contraste */
+    transition: text-shadow 0.3s ease;
+}
+
+ion-label:hover, ion-label:focus {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
+}
+
+ion-tab-bar {
+    /* border: 3px solid #B05DFF; */ /* Aumenta a espessura da borda e muda a cor para vermelho */
+    border-radius: 0px; /* Mantém os cantos da borda quadrados */
+    padding: 10px; /* Mantém o espaço entre os ícones e a borda */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra à barra */
+}
+
+/* Assegurando que a cor dos ícones permaneça consistente */
+ion-icon {
+    color: inherit;
 }
