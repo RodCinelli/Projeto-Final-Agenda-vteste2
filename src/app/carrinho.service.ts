@@ -4,7 +4,7 @@ import { ProdutoTab3 } from './models/produtotab3.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 type ProdutoCarrinho = ProdutoTab2 | ProdutoTab3;
 
-interface ItemCarrinho {
+export interface ItemCarrinho {
   id?: string;
   produto: ProdutoCarrinho;
   quantidade: number;
@@ -63,5 +63,9 @@ export class CarrinhoService {
 
   getTotalCarrinho() {
     return this.itensCarrinho.reduce((total, item) => total + (item.produto.preco * item.quantidade), 0);
+  }
+
+  limparCarrinho() {
+    this.itensCarrinho = [];
   }
 }

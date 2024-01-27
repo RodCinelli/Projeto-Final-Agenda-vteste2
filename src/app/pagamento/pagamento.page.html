@@ -5,6 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <!-- Lista dos itens do carrinho -->
+  <h2 class="titulo-carrinho">Itens do Carrinho</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of itensCarrinho">
+      <img [src]="item.produto.imagem" alt="{{item.produto.nome}}" class="produto-imagem">
+      <ion-label class="descricao-item" text-center>
+        <p>{{item.produto.nome}}</p>
+        <p>{{item.quantidade}}</p>
+        <p>R$ {{item.produto.preco | number: '1.2-2'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Total do carrinho -->
+  <h2 class="total">Total: R$ {{totalCarrinho | number: '1.2-2'}}</h2>
+
   <ion-list>
     <ion-radio-group [(ngModel)]="metodoPagamento">
       <ion-list-header>
