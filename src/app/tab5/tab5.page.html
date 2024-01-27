@@ -4,8 +4,18 @@
 </ion-row>
 
 <ion-content>
-  <ion-list>
-    <!-- Atualizado para usar getItensCarrinho() -->
+  <!-- Mensagem e botão para quando o carrinho estiver vazio -->
+  <ion-row *ngIf="!temItensNoCarrinho()">
+    <ion-col class="carrinho-vazio">
+      <p>Você não tem nenhum items no carrinho, vamos mudar isso!?</p>
+      <ion-button expand="full" color="primary" (click)="irParaCompras()">
+      Ir as Compras
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <!-- Lista de itens no carrinho -->
+  <ion-list *ngIf="temItensNoCarrinho()">
     <ion-item *ngFor="let item of getItensCarrinho(); let i = index">
       <ion-thumbnail slot="start">
         <img [src]="item.produto.imagem">
@@ -13,24 +23,34 @@
       <ion-label class="produto-info">
         <h2>{{ item.produto.nome }}</h2>
         <br>
-        <p class="quantidade">Quantidade: {{ item.quantidade }}</p>
+        <p class="quantidade">
+          <ion-button class="custom-button" (click)="diminuirQuantidade(i)" fill="clear">
+            <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+          </ion-button>
+          {{ item.quantidade }}
+          <ion-button class="custom-button" (click)="aumentarQuantidade(i)" fill="clear">
+            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+          </ion-button>
+        </p>
         <p class="preco">R$ {{ item.produto.preco | number: '1.2-2' }}</p>
       </ion-label>
       <ion-button class="button-lixeira" slot="end" (click)="removerDoCarrinho(i)" fill="clear">
         <ion-icon name="trash-outline"></ion-icon>
-      </ion-button>      
+      </ion-button>
     </ion-item>
   </ion-list>
-  <ion-row *ngIf="getItensCarrinho().length > 0">
+  
+  <!-- Total do Carrinho -->
+  <ion-row *ngIf="temItensNoCarrinho()">
     <ion-col>
         <h2 class="total-carrinho">Total: R$ {{ getTotalCarrinho() | number: '1.2-2' }}</h2>
     </ion-col>
   </ion-row>
 
   <!-- Botão Finalizar Compra -->
-<ion-row>
+  <ion-row *ngIf="temItensNoCarrinho()">
     <ion-col>
-      <ion-button expand="full" class="finalizar-compra" (click)="irParaPagamento()" *ngIf="temItensNoCarrinho()">
+      <ion-button expand="full" class="finalizar-compra" (click)="irParaPagamento()">
         Finalizar Compra
       </ion-button>
     </ion-col>

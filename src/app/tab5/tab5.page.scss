@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-ion-content{
+ion-content {
     --ion-background-color: #201E1E;
 }
 
-ion-row{
+ion-row {
     background-color: #201E1E;
 }
 
 ion-item {
     --background: #373636;
-    /* Cor de fundo do item */
     border-radius: 8px;
-    /* Cantos arredondados */
     margin: 0 0;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,68 +29,28 @@ img {
     height: auto;
 }
 
-.product-controls {
-    display: flex;
-    align-items: center;
-
-    ion-button {
-        margin: 0 5px;
-        --padding-start: 0;
-        --padding-end: 0;
-    }
-
-    ion-text {
-        padding: 0 10px;
-    }
-}
-
 .produto-info {
-    color: #fff; /* Cor do texto, se necessário */
+    color: #fff;
+    margin-left: 10px;
 }
 
-.quantidade{
-    color: #ff0000;
-}
-
-.preco{
+.quantidade {
     color: #32CD32;
 }
 
-.button-lixeira {
-    color: #ff0000; /* Cor existente */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Suaviza as transições para transformação e sombra */
+.preco {
+    color: #32CD32;
+    margin-left: 25px;
 }
 
-.button ion-icon {
-    font-size: 1.5em; /* Ajusta o tamanho do ícone */
-    transition: color 0.3s ease;
-    /* Suaviza a transição da cor */
+.button-lixeira {
+    color: #ff0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-lixeira:hover, .button-lixeira:focus {
-    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
-    box-shadow: 0 0 10px #ff0000; /* Adiciona uma sombra para destaque */
-}
-
-.button:hover ion-icon, .button:focus ion-icon {
-    color: #ff0000; /* Muda a cor do ícone ao passar o mouse */
-}
-
-/* Estilização para o botão Finalizar Compra */
-ion-button.finalizar-compra {
-    --background: #4CAF50; /* Cor de fundo verde */
-    --color: white; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-    margin: 10px 0; /* Margem acima e abaixo do botão */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: all 0.3s; /* Transição suave para efeitos */
-}
-
-ion-button.finalizar-compra:hover {
-    --background: #45a049; /* Cor de fundo um pouco mais escura ao passar o mouse */
-    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.24); /* Sombra maior para efeito de elevação */
-    transform: scale(1.05); /* Ligeiro aumento no tamanho */
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ff0000;
 }
 
 .total-carrinho {
@@ -103,29 +61,50 @@ ion-button.finalizar-compra:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.carrinho-vazio {
+    margin-top: 60%;
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Define a cor do texto */
+    font-size: 1.5em; /* Aumenta o tamanho da fonte */
+    padding: 20px; /* Adiciona um pouco de espaço ao redor do texto */
+}
+
+.carrinho-vazio p {
+    margin-bottom: 30px; /* Adiciona um pouco de espaço abaixo do parágrafo */
+}
+
 #nome {
     background-color: #4b0082;
-    /* ou qualquer outra cor que você esteja usando */
     color: #fff;
-    /* Cor do texto */
     font-size: 24px;
-    /* Tamanho da fonte */
     font-weight: bold;
-    /* Peso da fonte */
     text-align: center;
-    /* Alinhamento do texto */
     padding: 5px 20px;
-    /* Reduzir o espaçamento interno (vertical horizontal) */
     margin: 10px auto;
-    /* Margem superior e inferior reduzida, centralizado horizontalmente */
     border-radius: 4px;
-    /* Borda suavemente arredondada */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil para profundidade */
     max-width: 90%;
-    /* Ajuste para a largura máxima que o elemento deve ocupar */
     display: block;
-    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
     margin-top: 20px;
 }
- 
+
+.custom-button ion-icon {
+    color: #fff;
+    font-size: 1.8em; /* Ajusta o tamanho do ícone */
+    margin-bottom: 10px;
+}
+
+.finalizar-compra {
+    --background: #4CAF50;
+    --color: white;
+    font-weight: bold;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.finalizar-compra:hover {
+    --background: #45a049;
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.24);
+    transform: scale(1.05);
+}

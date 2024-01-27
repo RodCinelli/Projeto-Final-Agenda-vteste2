@@ -49,6 +49,11 @@ export class CarrinhoService {
     this.salvarItensCarrinho();
   }
 
+  atualizarCarrinho(novosItensCarrinho: ItemCarrinho[]) {
+    this.itensCarrinho = novosItensCarrinho;
+    this.salvarItensCarrinho();
+  }
+
   removerItem(index: number) {
     const item = this.itensCarrinho[index];
     if (item.id) {
@@ -66,6 +71,13 @@ export class CarrinhoService {
   }
 
   limparCarrinho() {
+    this.itensCarrinho = [];
+  }
+
+  limparCarrinhoFirestore() {
+    this.itensCarrinho.forEach(item => {
+      this.firestore.collection('carrinho').doc(item.id).delete();
+    });
     this.itensCarrinho = [];
   }
 }

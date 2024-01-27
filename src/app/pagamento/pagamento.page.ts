@@ -35,7 +35,16 @@ export class PagamentoPage implements OnInit {
   }
 
   async confirmarPagamento() {
-    if (this.metodoPagamento) {
+    // Verifica se há itens no carrinho
+    if (this.itensCarrinho.length === 0) {
+      const toast = await this.toastController.create({
+        message: 'Não há itens no seu carrinho',
+        duration: 2000,
+        color: 'danger',
+        position: 'top'
+      });
+      toast.present();
+    } else if (this.metodoPagamento) {
       const toast = await this.toastController.create({
         message: 'Compra efetuada com sucesso!',
         duration: 2000,
@@ -45,7 +54,7 @@ export class PagamentoPage implements OnInit {
       toast.present();
   
       // Limpe o carrinho após a compra
-      this.carrinhoService.limparCarrinho();
+      this.carrinhoService.limparCarrinhoFirestore();
       this.itensCarrinho = [];
       this.totalCarrinho = 0;
     } else {

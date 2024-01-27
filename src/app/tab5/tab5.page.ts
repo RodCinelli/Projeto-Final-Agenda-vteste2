@@ -41,6 +41,20 @@ export class Tab5Page implements OnInit {
     toast.present();
   }
 
+  diminuirQuantidade(i: number) {
+    let itensCarrinho = this.getItensCarrinho();
+    if (itensCarrinho[i].quantidade > 1) {
+      itensCarrinho[i].quantidade--;
+      this.carrinhoService.atualizarCarrinho(itensCarrinho); // Você precisa implementar este método no seu serviço
+    }
+  }
+  
+  aumentarQuantidade(i: number) {
+    let itensCarrinho = this.getItensCarrinho();
+    itensCarrinho[i].quantidade++;
+    this.carrinhoService.atualizarCarrinho(itensCarrinho); // Você precisa implementar este método no seu serviço
+  }
+
   // Função para navegar até a página de pagamento
   irParaPagamento() {
     this.navCtrl.navigateForward('/pagamento');
@@ -49,5 +63,10 @@ export class Tab5Page implements OnInit {
   // Função para verificar se há itens no carrinho
   temItensNoCarrinho(): boolean {
     return this.getItensCarrinho().length > 0;
+  }
+
+   // Função para navegar até a página de compras
+  irParaCompras() {
+    this.navCtrl.navigateForward('/tabs/tab2'); // Certifique-se de que este é o caminho correto para a Tab2Page
   }
 }
