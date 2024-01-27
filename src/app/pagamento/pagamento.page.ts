@@ -17,7 +17,21 @@ export class PagamentoPage implements OnInit {
 
   ngOnInit() {
     this.itensCarrinho = this.carrinhoService.getItensCarrinho(); // Obtenha os itens do carrinho do CarrinhoService
-    this.totalCarrinho = this.carrinhoService.getTotalCarrinho(); // Obtenha o total do carrinho do CarrinhoService
+    this.calcularTotal(); // Chame o método calcularTotal() após obter os itens do carrinho
+  }
+
+  calcularTotal() {
+    let total = 0;
+    for (let item of this.itensCarrinho) {
+      total += item.produto.preco * item.quantidade;
+    }
+  
+    // Aplica um desconto de 5% se o método de pagamento for Pix
+    if (this.metodoPagamento === 'Pix') {
+      total = total * 0.95;
+    }
+  
+    this.totalCarrinho = total;
   }
 
   async confirmarPagamento() {

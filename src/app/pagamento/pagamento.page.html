@@ -22,7 +22,7 @@
   <h2 class="total">Total: R$ {{totalCarrinho | number: '1.2-2'}}</h2>
 
   <ion-list>
-    <ion-radio-group [(ngModel)]="metodoPagamento">
+    <ion-radio-group [(ngModel)]="metodoPagamento" (ionChange)="calcularTotal()">
       <ion-list-header>
         <ion-label>Escolha a Forma de Pagamento</ion-label>
       </ion-list-header>
