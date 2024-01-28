@@ -7,6 +7,7 @@
 <ion-row>
   <ion-col>
     <ion-input class="campo-pesquisa" [(ngModel)]="textoPesquisa" (ionChange)="pesquisar()" placeholder="Pesquisar Evento"></ion-input>
+<!-- <ion-input class="campo-pesquisa" [(ngModel)]="textoPesquisa" (ngModelChange)="pesquisar()" placeholder="Pesquisar Evento"></ion-input> -->
   </ion-col>
   <ion-col>
     <ion-button class="botao-pesquisa" expand="full" (click)="pesquisar()">Pesquisar</ion-button>
