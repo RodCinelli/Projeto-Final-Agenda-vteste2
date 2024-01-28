@@ -1,8 +1,8 @@
-ion-content{
+ion-content {
     --ion-background-color: #201E1E;
 }
 
-ion-row{
+ion-row {
     background-color: #201E1E;
 }
 
@@ -50,12 +50,36 @@ img {
     }
 }
 
+.campo-pesquisa {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); // Adiciona um fundo translúcido
+    border-radius: 5px; // Arredonda os cantos do campo de entrada
+    padding: 5px; // Adiciona algum espaço interno
+}
+
+.botao-pesquisa {
+    --background: #4b0082;
+    --color: #fff;
+    border: none; // Remove a borda padrão
+    border-radius: 5px; // Arredonda os cantos do botão
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); // Adiciona uma sombra para dar um efeito 3D
+    transition: transform 0.3s ease; // Adiciona uma transição suave ao transformar
+    font-family: 'Roboto', sans-serif; // Ajusta a fonte
+}
+
+.botao-pesquisa:hover {
+    transform: scale(1.05); // Aumenta o tamanho do botão quando o mouse passa sobre ele
+}
+
 .product-controls ion-button {
-    color: #fff; /* Cor do ícone, se necessário */
+    color: #fff;
+    /* Cor do ícone, se necessário */
 }
 
 .produto-info {
-    color: #fff; /* Cor do texto, se necessário */
+    color: #fff;
+    /* Cor do texto, se necessário */
 }
 
 .custom-button {
@@ -64,27 +88,35 @@ img {
 }
 
 .custom-button ion-icon {
-    font-size: 1.8em; /* Ajusta o tamanho do ícone */
+    font-size: 1.8em;
+    /* Ajusta o tamanho do ícone */
     transition: color 0.3s ease;
     /* Suaviza a transição da cor */
 }
 
-.custom-button:hover, .custom-button:focus {
-    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
-    box-shadow: 0 0 10px #fff; /* Adiciona uma sombra para destaque */
+.custom-button:hover,
+.custom-button:focus {
+    transform: scale(1.1);
+    /* Aumenta ligeiramente o tamanho do botão */
+    box-shadow: 0 0 10px #fff;
+    /* Adiciona uma sombra para destaque */
 }
 
-.custom-button:hover ion-icon, .custom-button:focus ion-icon {
-    color: #fff; /* Muda a cor do ícone ao passar o mouse */
+.custom-button:hover ion-icon,
+.custom-button:focus ion-icon {
+    color: #fff;
+    /* Muda a cor do ícone ao passar o mouse */
 }
 
 
 .preco-produto {
-    color: #32CD32; /* Substitua #corDoTexto pela cor do texto desejada */  
+    color: #32CD32;
+    /* Substitua #corDoTexto pela cor do texto desejada */
 }
 
 .quantidade-produto {
-    color: #32CD32; /* Esta é a tonalidade de verde que você mencionou */
+    color: #32CD32;
+    /* Esta é a tonalidade de verde que você mencionou */
     /* Aqui você pode adicionar outras propriedades de estilo, se necessário */
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { CarrinhoService } from '../carrinho.service'; // Ajuste o caminho conforme necessário
 import { ProdutoTab2 } from '../models/produtotab2.model';
@@ -8,8 +8,8 @@ import { ProdutoTab2 } from '../models/produtotab2.model';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
 })
-export class Tab2Page {
-  produtos: ProdutoTab2[] = [
+export class Tab2Page implements OnInit {
+  produtosOriginais: ProdutoTab2[] = [
     {
       nome: 'Camisa Social Manga Longa Masculina Lisa Slim',
       imagem: 'assets/produtos/produto1.png',
@@ -206,11 +206,18 @@ export class Tab2Page {
       quantidade: 0
     },
   ];
+  
+  produtos: ProdutoTab2[] = [];
+  textoPesquisa = '';
 
   constructor(
     private carrinhoService: CarrinhoService,
     private toastController: ToastController
   ) {}
+
+  ngOnInit() {
+    this.produtos = [...this.produtosOriginais];
+  }
 
   incrementarProduto(index: number) {
     this.produtos[index].quantidade++;
@@ -219,6 +226,15 @@ export class Tab2Page {
   decrementarProduto(index: number) {
     if (this.produtos[index].quantidade > 0) {
       this.produtos[index].quantidade--;
+    }
+  }
+
+  pesquisar() {
+    if (this.textoPesquisa) {
+      this.produtos = this.produtosOriginais.filter(produto => produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase()));
+    } else {
+      // Recarregar a lista de produtos se o campo de pesquisa estiver vazio
+      this.produtos = [...this.produtosOriginais];
     }
   }
 
@@ -242,4 +258,4 @@ export class Tab2Page {
       toast.present();
     }
   }
-}  
+}
