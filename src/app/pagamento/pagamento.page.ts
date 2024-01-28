@@ -40,7 +40,7 @@ export class PagamentoPage implements OnInit {
       const toast = await this.toastController.create({
         message: 'Não há itens no seu carrinho',
         duration: 2000,
-        color: 'danger',
+        color: 'warning',
         position: 'top'
       });
       toast.present();
@@ -61,7 +61,7 @@ export class PagamentoPage implements OnInit {
       const toast = await this.toastController.create({
         message: 'Selecione um método de pagamento',
         duration: 2000,
-        color: 'danger',
+        color: 'warning',
         position: 'top'
       });
       toast.present();

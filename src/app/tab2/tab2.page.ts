@@ -230,14 +230,24 @@ export class Tab2Page implements OnInit {
   }
 
   pesquisar() {
-    if (this.textoPesquisa) {
-      this.produtos = this.produtosOriginais.filter(produto => produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase()));
-    } else {
-      // Recarregar a lista de produtos se o campo de pesquisa estiver vazio
+    if (this.textoPesquisa.trim().length === 0) {
+      this.mostrarMensagemVazio();
       this.produtos = [...this.produtosOriginais];
+    } else {
+      this.produtos = this.produtosOriginais.filter(produto => produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase()));
     }
   }
-
+  
+  async mostrarMensagemVazio() {
+    const toast = await this.toastController.create({
+      message: 'O campo de busca está vazio',
+      duration: 2000,
+      position: 'top',
+      color: 'warning'
+    });
+    toast.present();
+  }
+  
   async adicionarAoCarrinho(produto: ProdutoTab2) {
     if (produto.quantidade > 0) {
       this.carrinhoService.adicionarAoCarrinho(produto);

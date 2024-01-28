@@ -116,12 +116,21 @@ export class Tab3Page implements OnInit {
   }
 
   pesquisar() {
-    if (this.textoPesquisa) {
-      this.produtos = this.produtosOriginais.filter(produto => 
-        produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase())
-      );
-    } else {
+    if (this.textoPesquisa.trim().length === 0) {
+      this.mostrarMensagemVazio();
       this.produtos = [...this.produtosOriginais];
+    } else {
+      this.produtos = this.produtosOriginais.filter(produto => produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase()));
     }
+  }
+  
+  async mostrarMensagemVazio() {
+    const toast = await this.toastController.create({
+      message: 'O campo de busca está vazio',
+      duration: 2000,
+      position: 'top',
+      color: 'warning'
+    });
+    toast.present();
   }
 }
