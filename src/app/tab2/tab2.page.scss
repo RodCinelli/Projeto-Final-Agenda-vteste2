@@ -53,24 +53,33 @@ img {
 .campo-pesquisa {
     text-align: center;
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.1); // Adiciona um fundo translúcido
-    border-radius: 5px; // Arredonda os cantos do campo de entrada
-    padding: 5px; // Adiciona algum espaço interno
+    background-color: rgba(255, 255, 255, 0.1); // Fundo translúcido
+    border-radius: 5px; // Cantos arredondados
+    padding: 5px; // Espaço interno
+    font-size: 16px; // Tamanho maior da fonte
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); // Sombra para destaque
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; // Animação ao focar
+
+    &:focus {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); // Sombra maior ao focar
+        background-color: rgba(255, 255, 255, 0.2); // Fundo um pouco mais opaco ao focar
+    }
+
+    &::placeholder {
+        color: #ccc; // Cor do placeholder
+        font-style: italic; // Estilo do placeholder
+    }
 }
 
-.botao-pesquisa {
-    --background: #4b0082;
-    --color: #fff;
-    border: none; // Remove a borda padrão
-    border-radius: 5px; // Arredonda os cantos do botão
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); // Adiciona uma sombra para dar um efeito 3D
-    transition: transform 0.3s ease; // Adiciona uma transição suave ao transformar
-    font-family: 'Roboto', sans-serif; // Ajusta a fonte
+.campo-pesquisa::after {
+    content: '🔍'; /* Substitua pelo ícone de sua preferência */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Estilos adicionais para o ícone */
 }
 
-.botao-pesquisa:hover {
-    transform: scale(1.05); // Aumenta o tamanho do botão quando o mouse passa sobre ele
-}
 
 .product-controls ion-button {
     color: #fff;

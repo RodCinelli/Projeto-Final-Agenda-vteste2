@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: "AIzaSyCR2tuR3_IS_jjBD0MWCIeLEomYfZjsTKc",
     authDomain: "projeto-final-agenda-local.firebaseapp.com",
