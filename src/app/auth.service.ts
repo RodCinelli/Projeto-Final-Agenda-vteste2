@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   registerWithEmail(email: string, password: string) {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
   }
 
   loginWithGoogle() {
@@ -22,6 +22,7 @@ export class AuthService {
   }
 
   registerWithGoogle() {
+    // O método signInWithPopup é usado tanto para login quanto para registro com o Google
     return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
