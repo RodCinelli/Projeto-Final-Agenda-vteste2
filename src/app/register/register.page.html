@@ -1,8 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-item lines="none">
+  <ion-avatar slot="start" (click)="fileInput.click()">
+    <img [src]="avatarUrl || 'assets/default-avatar.png'" />
+  </ion-avatar>
+  <ion-label>Selecione um Avatar</ion-label>
+  <input type="file" #fileInput (change)="uploadAvatar($event)" accept="image/*" hidden>
+</ion-item>
 
 <ion-content class="ion-padding">
   <form (submit)="register()">
@@ -21,7 +29,7 @@
 
   <ion-button expand="full" color="secondary" (click)="registerWithGoogle()">
     <img src="assets/logo/google-logo.png" alt="Google Logo" class="google-logo">
-    Registrar com Google
+    Cadastrar com Google
   </ion-button>
 
   <ion-button (click)="voltarParaHome()">Voltar</ion-button>

@@ -2,6 +2,36 @@ ion-content{
     --ion-background-color: #201E1E;
 }
 
+ion-row {
+    background-color: #201E1E;
+}
+
+#nome {
+    background-color: #4b0082;
+    /* ou qualquer outra cor que você esteja usando */
+    color: #fff;
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-align: center;
+    /* Alinhamento do texto */
+    padding: 5px 20px;
+    /* Reduzir o espaçamento interno (vertical horizontal) */
+    margin: 10px auto;
+    /* Margem superior e inferior reduzida, centralizado horizontalmente */
+    border-radius: 4px;
+    /* Borda suavemente arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para profundidade */
+    max-width: 90%;
+    /* Ajuste para a largura máxima que o elemento deve ocupar */
+    display: block;
+    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
+    margin-top: 20px;
+}
+
 
 .background-image-container {
     background: url('/assets/apresentacao/loja_masculina.png') no-repeat center center / cover;

@@ -1,17 +1,16 @@
-<!-- Inserir Header Atualizado -->
-
+<!-- Título da Página -->
 
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-avatar slot="start">
-        <img src="assets/perfil/Eu.png"> <!-- Substitua pelo caminho do avatar do usuário -->
+        <img [src]="user.avatarUrl || 'assets/default-avatar.png'">
       </ion-avatar>
       <ion-label>
-        <h2>Rodrigo Cinelli</h2>
-        <p>rodcinelli&#64;gmail.com</p>
-        <p>••••••</p>
-      </ion-label>
+        <h2>{{ user.email }}</h2>
+        <p>{{ user.email }}</p>
+        <p *ngIf="isUserLoggedIn">{{ senhaCriptografada }}</p>
+      </ion-label>      
     </ion-item>
     <ion-item lines="none" detail (click)="irParaCarrinho()">
       <ion-icon name="cart" slot="start"></ion-icon>
