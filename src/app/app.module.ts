@@ -3,6 +3,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router'; // Importar Router
 
 import { environment } from '../environments/environment';
 
@@ -13,6 +14,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBFtiU5eYIVPIkpQZSqrSW-WelC2TWz0mc",

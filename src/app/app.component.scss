@@ -26,4 +26,11 @@
   width: 25px;
 }
 
-  
+  .login-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; // Um valor alto para garantir que esteja acima de outros elementos
+}

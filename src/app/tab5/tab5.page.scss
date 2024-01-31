@@ -82,7 +82,7 @@ img {
 }
 
 .button {
-    color: #ff0000; /* Cor existente */
+/*     color: #ff0000; */ /* Cor existente */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Suaviza as transições para transformação e sombra */
 }
@@ -95,7 +95,7 @@ img {
 
 .button:hover, .button:focus {
     transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
-    box-shadow: 0 0 10px #ff0000; /* Adiciona uma sombra para destaque */
+/*     box-shadow: 0 0 10px #ff0000;  *//* Adiciona uma sombra para destaque */
 }
 
 .button:hover ion-icon, .button:focus ion-icon {
@@ -103,24 +103,24 @@ img {
 }
 
 
-ion-fab-button {
+.total {
     --background: #4b0082;
     --background-activated: #87d361;
     --background-hover: #a3e681;
-    --border-radius: 15px;
+    --border-radius: 2px;
     --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
     --color: rgb(255, 255, 255);
-    width: 300px;
-    padding: 0;
-    }
+    width: 210px;
+    height: 30px;
+    margin-bottom: 60px;
+    } 
 
 .total-carrinho {
     background-color: #4b0082;
-    max-width: 220px;
     color: white;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         /* Tamanho da fonte */
         font-weight: bold;
@@ -166,3 +166,49 @@ ion-fab-button {
     margin-top: 20px;
 } 
 
+.custom-button ion-icon {
+    color: #fff;
+    font-size: 1.8em; /* Ajusta o tamanho do ícone */
+    margin-bottom: 10px;
+}
+
+/* .finalizar-compra:hover {
+    --background: #45a049;
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.24);
+    transform: scale(1.05);
+} */
+
+.finalizar{
+    --background: #4caf4f00;
+    --background-activated: #87d361;
+    --background-hover: #a3e681;
+    --color: rgb(255, 255, 255);
+    width: 300px;
+
+    --background: #4CAF50;
+    --color: white;
+    font-weight: bold;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.carrinho-vazio {
+    margin-top: 40px;
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Define a cor do texto */
+    font-size: 1.5em; /* Aumenta o tamanho da fonte */
+    padding: 20px; /* Adiciona um pouco de espaço ao redor do texto */
+}
+
+.carrinho-vazio p {
+    margin-bottom: 30px; /* Adiciona um pouco de espaço abaixo do parágrafo */
+}
+
+ion-list{
+    margin-bottom: 115px;
+}
+
+.fundo{
+    background-color: #fff;
+}

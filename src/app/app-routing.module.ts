@@ -20,13 +20,27 @@ const routes: Routes = [
     loadChildren: () => import('./cad-produtos/cad-produtos.module').then( m => m.CadProdutosPageModule)
   },
   {
-    path: 'delete-produtos',
+    path: 'tabs/delete-produtos',
     loadChildren: () => import('./delete-produtos/delete-produtos.module').then( m => m.DeleteProdutosPageModule)
   },
   {
-    path: 'edit-produtos',
+    path: 'tabs/edit-produtos',
     loadChildren: () => import('./edit-produtos/edit-produtos.module').then( m => m.EditProdutosPageModule)
+  },
+  {
+    path: 'pagamento',
+    loadChildren: () => import('./pagamento/pagamento.module').then(m => m.PagamentoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   }
+
+
 
 
 ];

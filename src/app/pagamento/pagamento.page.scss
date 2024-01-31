@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+ion-title {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+ion-content{
+    --ion-background-color: #f3f3f3;
+}
+
+ion-toolbar {
+    --background: #87CEFA; // Cor de fundo azul claro
+    --color: white; // Cor do texto branco
+}
+
+ion-list {
+    --ion-background-color: #f3f3f3;
+}
+
+ion-list-header {
+    --background: #ffffff;
+    --color: #333;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-list-header ion-label {
+    text-align: center;
+    font-size: 1.2em; // Aumenta o tamanho da fonte do título da lista
+}
+
+ion-item {
+    --background: #ffffff;
+    --color: #333;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-button {
+    --background: #4caf50;
+    --color: #fff;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-button[color="medium"] {
+    --background: #ff9800;
+    --color: #fff;
+}
+
+.produto-imagem {
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo-carrinho {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #333;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.total {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #4caf50;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.descricao-item,
+.titulo-carrinho,
+.total {
+    text-align: center; // Centraliza o texto
+}

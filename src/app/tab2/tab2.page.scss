@@ -1,5 +1,4 @@
 
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -31,7 +30,7 @@ ion-content{
 }
 
 ion-row{
-    background-color: #201E1E;
+/*     background-color: #201E1E; */
 }
 
 ion-item {
@@ -139,5 +138,25 @@ img {
     /* Ajuste para a largura máxima que o elemento deve ocupar */
     display: block;
     /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
-    margin-top: 20px;
+}
+
+.campo-pesquisa {
+    margin-top: -75px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); // Adiciona um fundo translúcido
+    border-radius: 5px; // Arredonda os cantos do campo de entrada
+    padding: 5px; // Adiciona algum espaço interno
+}
+
+#campo-pesquisa{
+
+    height: 300px;
+    background-color: #4b0082;
+    border-color: #4b0082;
+    border-width: 200px;
+}
+
+ion-list{
+    margin-top: -35px;
 }

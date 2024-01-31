@@ -18,7 +18,7 @@ ion-header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9999; /* Ajuste o valor se necessário */
+    z-index: 9999;
     background-color: #111010;
   }
 
@@ -35,3 +35,10 @@ ion-header {
 ion-content{
   --ion-background-color: #201E1E;
 }
+
+ ion-input.custom.ios .input-bottom .helper-text,
+ ion-input.custom.ios .input-bottom .counter,
+ ion-input.custom.md .input-bottom .helper-text,
+ ion-input.custom.md .input-bottom .counter {
+   color: var(--ion-color-primary);
+ }

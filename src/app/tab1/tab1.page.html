@@ -1,18 +1,73 @@
 <ion-content>
+  <!-- Inserir o ícone de login aqui -->
 
-<br>
 
-<div class="slide">
+
+  <ion-content>
+
+    <swiper-container class="mySwiper" [autoplay]="{delay: 3000}">
+
+        <swiper-slide><img src="assets/capa.png" alt="AgendaLocal"></swiper-slide>
+        <swiper-slide> <img src="assets/apresentacao/loja_masculina.png" alt="Algum de nossos produtos"></swiper-slide>
+        <swiper-slide><img src="assets/apresentacao/roupas_masculinas2.png"></swiper-slide>
+    </swiper-container>
+
+    
+
+    <swiper-container style="color: white;" pagination="true" [navigation]="{nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'}">
+
+    <swiper-slide >
+      <ion-col>
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </swiper-slide>
+
+    <swiper-slide>
+      <ion-col>
+        fotoEvento2
+      </ion-col>
+      <ion-col>
+        fotoEvento2
+      </ion-col>
+    </swiper-slide>
+</swiper-container>
+
+
+    <!-- <div class="slide">
 
   <div class="photo-gallery" #photoGallery>
 
-    <!-- Seta para Esquerda -->
+    Seta para Esquerda
     <ion-icon name="chevron-back-circle" class="gallery-arrow left-arrow" (click)="previousImage()"></ion-icon>
     <img src="assets/apresentacao/loja_masculina.png" alt="Imagem da Nossa loja" #galleryImage>
     <img src="assets/apresentacao/roupas_masculinas.png" alt="Algum de nossos produtos" #galleryImage>
     <img src="assets/apresentacao/roupas_masculinas2.png" alt="Algum de nossos produtos" #galleryImage>
     <img src="assets/apresentacao/escolha_de_produtos.png" alt="Um cliente escolhendo produtos" #galleryImage>
-    <!-- Seta para Direita -->
+    Seta para Direita
     <ion-icon name="chevron-forward-circle" class="gallery-arrow right-arrow" (click)="nextImage()"></ion-icon>
 
     <div class="carousel-indicators" style="margin-top: -13%;">
@@ -24,11 +79,11 @@
 
   
 
-  <!-- Descrição da Loja -->
+  Descrição da Loja
   <div class="store-description">
     <h2>Sobre a Cinelli Store:</h2>
     <p>A Cinelli Store oferece uma ampla gama de roupas e calçados masculinos. Visite-nos para descobrir as últimas
       tendências!</p>
   </div>
-</div>
-</ion-content>
+</div> -->
+  </ion-content>

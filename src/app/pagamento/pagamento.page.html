@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Lista dos itens do carrinho -->
+  <h2 class="titulo-carrinho">Itens do Carrinho</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of itensCarrinho">
+      <img [src]="item.produto.imagem" alt="{{item.produto.nome}}" class="produto-imagem">
+      <ion-label class="descricao-item" text-center>
+        <p>{{item.produto.nome}}</p>
+        <p>{{item.quantidade}}</p>
+        <p>R$ {{item.produto.preco | number: '1.2-2'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Total do carrinho -->
+  <h2 class="total">Total: R$ {{totalCarrinho | number: '1.2-2'}}</h2>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="metodoPagamento" (ionChange)="calcularTotal()">
+      <ion-list-header>
+        <ion-label>Escolha a Forma de Pagamento</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Cartão de Crédito</ion-label>
+        <ion-radio slot="start" value="cartao_credito"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Pix</ion-label>
+        <ion-radio slot="start" value="Pix"></ion-radio>
+      </ion-item>
+
+      <!-- Opções adicionais para cartão de crédito -->
+      <ion-item *ngIf="metodoPagamento === 'cartao_credito'">
+        <ion-label>Parcelamento:</ion-label>
+        <ion-select [(ngModel)]="numeroParcelas">
+          <ion-select-option value="1">1x sem juros</ion-select-option>
+          <ion-select-option value="2">2x sem juros</ion-select-option>
+          <ion-select-option value="3">3x sem juros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Informação de desconto para Pix -->
+      <ion-item *ngIf="metodoPagamento === 'Pix'">
+        <ion-label>Desconto de 5% aplicado</ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" (click)="confirmarPagamento()">
+    Confirmar Pagamento
+  </ion-button>
+  <ion-button expand="full" color="medium" (click)="voltarAoCarrinho()">
+    Voltar ao Carrinho
+  </ion-button>
+</ion-content>

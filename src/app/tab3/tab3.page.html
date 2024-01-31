@@ -5,6 +5,13 @@
   <ion-col id="nome">Nossas Ofertas !</ion-col>
 </ion-row>
 
+<!-- Campo de pesquisa -->
+<ion-row >
+  <ion-col>
+    <ion-input class="campo-pesquisa" [(ngModel)]="textoPesquisa" (ngModelChange)="pesquisar()" placeholder="Pesquisar Evento"></ion-input>
+  </ion-col>
+  </ion-row>
+
 
 <ion-list>
   <ion-item *ngFor="let produto of produtos; let i = index" lines="none">
