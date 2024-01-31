@@ -7,11 +7,11 @@
   <ion-list>
     <ion-item>
       <ion-avatar slot="start">
-        <img [src]="user.avatarUrl || 'assets/default-avatar.png'">
+        <!-- Altere user.avatarUrl para user.photoURL -->
+        <img [src]="user.photoURL || 'assets/default-avatar.png'">
       </ion-avatar>
       <ion-label>
         <h2>{{ user.email }}</h2>
-        <p>{{ user.email }}</p>
         <p *ngIf="isUserLoggedIn">{{ senhaCriptografada }}</p>
       </ion-label>      
     </ion-item>
