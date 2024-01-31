@@ -7,14 +7,15 @@
   <ion-list>
     <ion-item>
       <ion-avatar slot="start">
-        <!-- Altere user.avatarUrl para user.photoURL -->
         <img [src]="user.photoURL || 'assets/default-avatar.png'">
       </ion-avatar>
       <ion-label>
         <h2>{{ user.email }}</h2>
+        <p>{{ user.accountType | uppercase }} Account</p> <!-- Adicione esta linha para mostrar o tipo de conta -->
         <p *ngIf="isUserLoggedIn">{{ senhaCriptografada }}</p>
       </ion-label>      
     </ion-item>
+    <!-- Outros itens... -->
     <ion-item lines="none" detail (click)="irParaCarrinho()">
       <ion-icon name="cart" slot="start"></ion-icon>
       Meu carrinho de compras

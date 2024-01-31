@@ -9,6 +9,7 @@ import { ProdutoTab3 } from '../models/produtotab3.model';
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page implements OnInit {
+  user: any; 
   produtosOriginais: ProdutoTab3[] = [
     {
       nome: 'Camisa Social Slim Empório Colombo',
@@ -90,6 +91,18 @@ export class Tab3Page implements OnInit {
   }
 
   async adicionarAoCarrinho(produto: ProdutoTab3) {
+    // Supondo que você tem uma variável user que contém o tipo de conta
+    if (this.user.accountType !== 'premium') {
+      const toast = await this.toastController.create({
+        message: 'Apenas usuários premium podem adicionar itens ao carrinho.',
+        duration: 2000,
+        position: 'top',
+        color: 'warning'
+      });
+      toast.present();
+      return;
+    }
+  
     if (produto.quantidade > 0) {
       this.carrinhoService.adicionarAoCarrinho(produto);
       const toast = await this.toastController.create({

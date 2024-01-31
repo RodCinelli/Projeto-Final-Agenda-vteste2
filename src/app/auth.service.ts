@@ -42,17 +42,17 @@ export class AuthService {
   async registerWithEmail(email: string, password: string, imageFile: File) {
     const credential = await this.afAuth.createUserWithEmailAndPassword(email, password);
     if (credential.user) {
-        // Primeiro, faça o upload do avatar
-        const downloadURL = await this.uploadAvatarAndSetUserProfile(imageFile);
-
-        // Em seguida, crie o documento do usuário no Firestore com a URL do avatar
-        const userRef = this.firestore.doc(`users/${credential.user.uid}`);
-        const userData = {
-            uid: credential.user.uid,
-            email: credential.user.email ?? '',
-            photoURL: downloadURL  // Use a URL de download do avatar
-        };
-        await userRef.set(userData, { merge: true });
+      const downloadURL = await this.uploadAvatarAndSetUserProfile(imageFile);
+  
+      const userData = {
+        uid: credential.user.uid,
+        email: credential.user.email ?? '',
+        photoURL: downloadURL,
+        accountType: 'free' // Define como 'free' por padrão
+      };
+  
+      const userRef = this.firestore.doc(`users/${credential.user.uid}`);
+      await userRef.set(userData, { merge: true });
     }
     return credential;
   }
@@ -87,13 +87,18 @@ export class AuthService {
   }
 
   async getCurrentUserProfile() {
-    const user = firebase.auth().currentUser;
+    const user = await this.afAuth.currentUser;
     if (user) {
-      const userDoc = await firebase.firestore().doc(`users/${user.uid}`).get();
-      if (userDoc.exists) {
-        const userData = userDoc.data();
-        console.log('Dados do usuário:', userData);
-        return userData;
+      const userDocRef = this.firestore.doc(`users/${user.uid}`).get();
+      const userDocSnapshot = await userDocRef.toPromise();
+      if (userDocSnapshot && userDocSnapshot.exists) {
+        const userData = userDocSnapshot.data() as any; // Assuma que userData é um tipo 'any' por enquanto
+        return {
+          ...userData,
+          email: user.email ?? '',
+          photoURL: user.photoURL ?? 'assets/default-avatar.png',
+          accountType: userData?.accountType ?? 'free' // Use o operador de encadeamento opcional
+        };
       } else {
         throw new Error('Documento do usuário não encontrado');
       }
