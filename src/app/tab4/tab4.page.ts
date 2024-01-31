@@ -43,9 +43,10 @@ export class Tab4Page implements OnInit {
       }
     }).catch(error => {
       console.error('Erro ao carregar perfil:', error);
-      this.showToast('Erro ao carregar o perfil do usuário. Por favor, tente novamente.');
+      // this.showToast('Erro ao carregar o perfil do usuário. Por favor, tente novamente.'); // Esta linha foi removida
     });
   }
+  
 
   irParaCarrinho() {
     this.router.navigateByUrl('/tabs/tab5');

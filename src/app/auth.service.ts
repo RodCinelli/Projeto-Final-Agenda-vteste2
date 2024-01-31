@@ -19,52 +19,40 @@ export class AuthService {
     private firestore: AngularFirestore
   ) { }
 
-  async uploadAvatarAndSetUserProfile(imageFile: File) {
+  async uploadAvatarAndSetUserProfile(imageFile: File): Promise<string> {
     const storageRef = firebase.storage().ref();
     const avatarRef = storageRef.child(`Avatar/${Date.now()}_${imageFile.name}`);
-  
+
     try {
-      console.log('Iniciando o upload do avatar...');
-      const snapshot = await avatarRef.put(imageFile);
-      console.log('Upload do avatar concluído.');
-  
-      console.log('Obtendo a URL de download do avatar...');
-      const downloadURL = await snapshot.ref.getDownloadURL();
-      console.log('URL de download do avatar obtida:', downloadURL);
-  
-      console.log('Atualizando o perfil do usuário com a nova URL do avatar...');
-      await this.updateUserProfile(downloadURL);
-      console.log('Perfil do usuário atualizado com sucesso.');
-  
-      console.log('Obtendo o ID do usuário atual...');
-      const userId = await this.getCurrentUserId();
-      console.log('ID do usuário atual obtido:', userId);
-  
-      if (userId) {
-        console.log('Atualizando o documento do usuário com a nova URL do avatar...');
-        const userRef = this.firestore.doc(`users/${userId}`);
-        await userRef.update({ photoURL: downloadURL });
-        console.log('Documento do usuário atualizado com sucesso.');
-      }
+        const snapshot = await avatarRef.put(imageFile);
+        const downloadURL = await snapshot.ref.getDownloadURL();
+        await this.updateUserProfile(downloadURL);
+        console.log('Avatar atualizado com sucesso:', downloadURL);
+        return downloadURL;  // Retorna a URL de download
     } catch (error) {
-      console.error('Erro ao atualizar o avatar:', error);
-      throw new Error('Falha ao fazer upload e atualizar o avatar.');
+        console.error('Erro ao atualizar o avatar:', error);
+        throw new Error('Falha ao fazer upload e atualizar o avatar.');
     }
   }
-  
+
   loginWithEmail(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
-  async registerWithEmail(email: string, password: string) {
+  async registerWithEmail(email: string, password: string, imageFile: File) {
     const credential = await this.afAuth.createUserWithEmailAndPassword(email, password);
     if (credential.user) {
-      const userRef = this.firestore.doc(`users/${credential.user.uid}`);
-      const userData = {
-        uid: credential.user.uid,
-        email: credential.user.email ?? '',
-      };
-      await userRef.set(userData, { merge: true });
+        // Primeiro, faça o upload do avatar
+        const downloadURL = await this.uploadAvatarAndSetUserProfile(imageFile);
+
+        // Em seguida, crie o documento do usuário no Firestore com a URL do avatar
+        const userRef = this.firestore.doc(`users/${credential.user.uid}`);
+        const userData = {
+            uid: credential.user.uid,
+            email: credential.user.email ?? '',
+            photoURL: downloadURL  // Use a URL de download do avatar
+        };
+        await userRef.set(userData, { merge: true });
     }
     return credential;
   }
@@ -85,7 +73,7 @@ export class AuthService {
     const user = await this.afAuth.currentUser;
     return user?.uid;
   }
-  
+
   updateUserProfile(url: string) {
     return this.afAuth.currentUser.then(user => {
       return user?.updateProfile({

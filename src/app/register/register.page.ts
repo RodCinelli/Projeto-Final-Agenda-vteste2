@@ -3,22 +3,26 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFirestore } from '@angular/fire/compat/firestore';  // Importe AngularFirestore
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.page.html',
   styleUrls: ['register.page.scss'],
 })
+
 export class RegisterPage {
   user = { email: '', password: '' };
-  avatarUrl: string | null = null; // Adicionado para manter a URL do avatar
+  avatarFile: File | null = null; // Para manter o arquivo do avatar
+  avatarUrl: string = 'assets/default-avatar.png'; // Para manter a URL do avatar
 
   constructor(
-    private authService: AuthService, 
-    private router: Router, 
-    private toastController: ToastController, 
+    private authService: AuthService,
+    private router: Router,
+    private toastController: ToastController,
     private storage: AngularFireStorage,
-  ) {}
+    private firestore: AngularFirestore // Certifique-se de que está injetando o AngularFirestore aqui
+  ) { }
 
   async showToast(message: string, color: string = 'dark') {
     const toast = await this.toastController.create({
@@ -30,81 +34,73 @@ export class RegisterPage {
     toast.present();
   }
 
-  register() {
-    // Verificar se os campos estão preenchidos
-    if (!this.user.email || !this.user.password) {
-      this.showToast('Por favor, preencha todos os campos.', 'warning');
+  async register() {
+    if (!this.user.email || !this.user.password || !this.avatarFile) {
+      this.showToast('Por favor, preencha todos os campos e selecione um avatar.', 'warning');
       return;
     }
-  
-    // Verificar o comprimento da senha
+
     if (this.user.password.length < 6) {
       this.showToast('A senha deve ter no mínimo 6 caracteres.', 'warning');
       return;
     }
-  
-    this.authService.registerWithEmail(this.user.email, this.user.password)
-    .then(() => {
-      // ... sucesso ...
-      this.router.navigateByUrl('/tabs/tab4');
-      this.user = { email: '', password: '' }; // Limpa os campos
-      this.avatarUrl = 'assets/default-avatar.png'; // Redefine o avatar para o padrão
-    })
-      .catch(error => {
-        let errorMessage = '';
-  
-        if (error.code === 'auth/email-already-in-use') {
-          errorMessage = 'O e-mail já está em uso.';
-        } else if (error.code === 'auth/invalid-email') {
-          errorMessage = 'E-mail inválido.';
-        } else {
-          errorMessage = 'Erro ao registrar: ' + error.message;
-        }
-  
-        this.showToast(errorMessage, 'danger');
+
+    try {
+      await this.authService.registerWithEmail(this.user.email, this.user.password, this.avatarFile);
+      this.router.navigateByUrl('/tabs/tab4').then(() => {
+        window.location.reload();
       });
+      this.showToast('Cadastro realizado com sucesso!', 'success');
+      this.user = { email: '', password: '' };
+    } catch (error: any) {
+      let errorMessage = error.code === 'auth/email-already-in-use' ? 'O e-mail já está em uso.' :
+        error.code === 'auth/invalid-email' ? 'E-mail inválido.' :
+          `Erro ao registrar: ${error.message}`;
+      this.showToast(errorMessage, 'danger');
+    }
   }
-  
+
   registerWithGoogle() {
     this.authService.registerWithGoogle()
-    .then(() => {
-      // ... sucesso ...
-      this.router.navigateByUrl('/tabs/tab4');
-      this.avatarUrl = 'assets/default-avatar.png'; // Redefine o avatar para o padrão
-    })
-      .catch(error => {
-        // Ignora os erros específicos de popup fechada pelo usuário e popup conflitante
+      .then(async (result) => {
+        if (result.user) {
+          const avatarURL = result.user.photoURL || 'assets/default-avatar.png';
+          const userRef = this.firestore.doc(`users/${result.user.uid}`);
+          await userRef.set({
+            uid: result.user.uid,
+            email: result.user.email,
+            photoURL: avatarURL
+          }, { merge: true });
+
+          this.router.navigateByUrl('/tabs/tab4').then(() => {
+            window.location.reload();
+          });
+          this.showToast('Cadastro realizado com sucesso!', 'success');
+        }
+      })
+      .catch((error: any) => {
         if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-popup-request') {
           let errorMessage = 'Erro no registro com Google: ' + error.message;
           this.showToast(errorMessage, 'danger');
         }
       });
   }
-  
-  voltarParaHome() {
-    this.router.navigateByUrl('/tabs/tab1'); // Substitua '/tabs/tab1' pelo caminho correto para a sua página Home
-  }  
 
   uploadAvatar(event: any) {
     const file = event.target.files[0];
     if (file) {
-      const filePath = `Avatar/${new Date().getTime()}_${file.name}`;
-      const fileRef = this.storage.ref(filePath);
-      const uploadTask = this.storage.upload(filePath, file);
+      this.avatarFile = file;
 
-      uploadTask.snapshotChanges().toPromise().then(() => {
-        fileRef.getDownloadURL().toPromise().then(url => {
-          this.avatarUrl = url; // Atualiza a URL do avatar
-          // Aqui você pode salvar a URL no perfil do usuário ou no banco de dados
-          console.log('URL do Avatar:', url);
-          this.showToast('Avatar atualizado com sucesso.', 'success');
-        });
-      }).catch(error => {
-        console.error('Erro ao fazer upload:', error);
-        this.showToast('Erro ao atualizar o avatar.', 'danger');
-      });
+      // Gerar uma URL temporária para visualização
+      const reader = new FileReader();
+      reader.onload = (e: any) => this.avatarUrl = e.target.result;
+      reader.readAsDataURL(file);
+    } else {
+      this.showToast('Erro ao carregar o avatar.', 'danger');
     }
   }
-}
-  
 
+  voltarParaHome() {
+    this.router.navigateByUrl('/tabs/tab1');
+  }
+}
