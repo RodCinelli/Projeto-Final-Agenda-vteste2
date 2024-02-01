@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { CarrinhoService } from '../carrinho.service';
 import { ProdutoTab3 } from '../models/produtotab3.model';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-tab3',
@@ -73,10 +74,32 @@ export class Tab3Page implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private authService: AuthService // Injete o serviço de autenticação aqui
   ) {}
 
   ngOnInit() {
+    this.loadProducts();
+    this.authService.userBecamePremium.subscribe(() => {
+      this.loadUserProfile();
+    });
+    this.loadUserProfile(); // Mova esta linha para aqui
+  }
+  
+  async loadUserProfile() {
+    if (await this.authService.isLoggedIn()) {
+      try {
+        this.user = await this.authService.getCurrentUserProfile();
+        console.log('User after getCurrentUserProfile:', this.user);
+      } catch (error) {
+        console.error('Erro ao obter perfil do usuário', error);
+      }
+    } else {
+      console.log('Nenhum usuário logado');
+    }
+  }
+  
+  loadProducts() {
     this.produtos = [...this.produtosOriginais];
   }
 
@@ -91,10 +114,17 @@ export class Tab3Page implements OnInit {
   }
 
   async adicionarAoCarrinho(produto: ProdutoTab3) {
-    // Supondo que você tem uma variável user que contém o tipo de conta
-    if (this.user.accountType !== 'premium') {
+    if (!this.user) {
+      console.log('User is undefined');
+    } else {
+      console.log('User:', this.user);
+      console.log('Account type:', this.user.accountType);
+    }
+  
+    // Verifique se this.user não é undefined antes de tentar acessar this.user.accountType
+    if (this.user && this.user.accountType !== 'premium') {
       const toast = await this.toastController.create({
-        message: 'Apenas usuários premium podem adicionar itens ao carrinho.',
+        message: 'Apenas usuários premium podem adicionar itens com desconto ao carrinho.',
         duration: 2000,
         position: 'top',
         color: 'warning'

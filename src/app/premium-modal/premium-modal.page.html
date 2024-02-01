@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="premium-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab4" (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="premium-title">Assinatura Premium</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="premium-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="premium-large-title">PremiumModal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card class="premium-card">
+    <ion-card-content>
+      <p class="premium-text">Por apenas R$30 por mês, você pode se tornar um usuário premium e ter acesso exclusivos a descontos e compras de ingressos antecipados na plataforma Agenda Local!</p>
+    </ion-card-content>
+</ion-card>
+<ion-button expand="full" class="premium-button" (click)="upgradeToPremium()">Tornar-se Premium</ion-button>
+</ion-content>

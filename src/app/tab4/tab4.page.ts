@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { ToastController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { PremiumModalPage } from '../premium-modal/premium-modal.page';
 
 @Component({
   selector: 'app-tab4',
@@ -16,16 +18,21 @@ export class Tab4Page implements OnInit {
   constructor(
     private router: Router, 
     private authService: AuthService,
-    private toastController: ToastController 
+    private toastController: ToastController,
+    private modalController: ModalController // Injete o ModalController aqui
   ) {}
 
   ngOnInit() {
     this.authService.checkAuthState().subscribe(user => {
       if (user) {
         this.loadUserProfile();
-      } else {
-        // O usuário não está logado, você pode adicionar lógica adicional aqui se necessário
       }
+    });
+
+    // Adicione o ouvinte para o evento userBecamePremium
+    this.authService.userBecamePremium.subscribe(() => {
+      this.showToast('Parabéns!! Agora você é um usuário Premium!');
+      this.loadUserProfile();
     });
   }
 
@@ -41,6 +48,13 @@ export class Tab4Page implements OnInit {
     }).catch(error => {
       console.error('Erro ao carregar perfil:', error);
     });
+  }
+
+  async openPremiumModal() {
+    const modal = await this.modalController.create({
+      component: PremiumModalPage,
+    });
+    return await modal.present();
   }
   
   irParaCarrinho() {

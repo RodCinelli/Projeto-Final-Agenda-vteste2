@@ -3,11 +3,15 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import { Observable } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  // Adicione o EventEmitter
+  public userBecamePremium = new EventEmitter<void>();
 
   // Método para verificar o estado de autenticação
   public checkAuthState(): Observable<firebase.User | null> {
@@ -18,7 +22,6 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore
   ) { }
-
   async uploadAvatarAndSetUserProfile(imageFile: File): Promise<string> {
     const storageRef = firebase.storage().ref();
     const avatarRef = storageRef.child(`Avatar/${Date.now()}_${imageFile.name}`);
@@ -104,6 +107,29 @@ export class AuthService {
       }
     } else {
       throw new Error('Nenhum usuário logado');
+    }
+  }
+
+  isLoggedIn(): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.checkAuthState().subscribe(user => {
+        if (user) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      }, reject);
+    });
+  }
+
+  async upgradeToPremium() {
+    const user = await this.afAuth.currentUser;
+    if (user) {
+      const userRef = this.firestore.doc(`users/${user.uid}`);
+      await userRef.update({ accountType: 'premium' });
+
+      // Emita o evento quando o usuário se tornar premium
+      this.userBecamePremium.emit();
     }
   }
 }

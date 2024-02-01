@@ -16,6 +16,10 @@
       </ion-label>      
     </ion-item>
     <!-- Outros itens... -->
+    <ion-item *ngIf="user.accountType === 'free'" (click)="openPremiumModal()">
+      <ion-icon name="star" slot="start"></ion-icon> <!-- Adicione um ícone se quiser -->
+      Assinar conta premium
+    </ion-item>
     <ion-item lines="none" detail (click)="irParaCarrinho()">
       <ion-icon name="cart" slot="start"></ion-icon>
       Meu carrinho de compras
