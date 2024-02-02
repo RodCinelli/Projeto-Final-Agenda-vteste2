@@ -67,6 +67,78 @@ export class Tab3Page implements OnInit {
       preco: 59.90, // Preço com desconto
       quantidade: 0
     },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto8.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto9.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto10.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto11.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto12.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto13.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto14.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto15.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapatenis Masculino Polo Plus Original',
+      imagem: 'assets/produtos/produtodesconto16.png',
+      precoOriginal: 97.90, // Preço antes do desconto
+      preco: 59.90, // Preço com desconto
+      quantidade: 0
+    },
   ];
 
   produtos: ProdutoTab3[] = [];

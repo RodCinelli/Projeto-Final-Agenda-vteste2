@@ -205,6 +205,20 @@ export class Tab2Page implements OnInit {
       preco: 69.90,
       quantidade: 0
     },
+
+    {
+      nome: 'Sapato Social Masculino De Amarrar Café',
+      imagem: 'assets/produtos/produto29.png',
+      preco: 69.90,
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapato Social Masculino De Amarrar Café',
+      imagem: 'assets/produtos/produto30.png',
+      preco: 69.90,
+      quantidade: 0
+    },
   ];
   
   produtos: ProdutoTab2[] = [];
