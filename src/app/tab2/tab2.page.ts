@@ -11,212 +11,191 @@ import { ProdutoTab2 } from '../models/produtotab2.model';
 export class Tab2Page implements OnInit {
   produtosOriginais: ProdutoTab2[] = [
     {
-      nome: 'Show Imagine Dragons Rock in Rio 2024',
+      nome: 'Show Imagine Dragons Rock in Rio',
       imagem: 'assets/produtos/produto1.png',
-      preco: 90.99,
+      preco: 355.00,
       quantidade: 0
     },
 
     {
-      nome: 'Show Ed Sheeram Rock in Rio 2024',
+      nome: 'Show Ed Sheeram Rock in Rio',
       imagem: 'assets/produtos/produto2.png',
-      preco: 79.90,
+      preco: 300.00,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Social Slim Fit Masculina',
+      nome: 'Show Ivete Sangalo Rock in Rio',
       imagem: 'assets/produtos/produto3.png',
-      preco: 78.99,
+      preco: 250.99,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Social Slim Premium 4% Lycra',
+      nome: 'Show Eric Clapton Jeunesse Arena',
       imagem: 'assets/produtos/produto4.png',
-      preco: 78.99,
+      preco: 229.99,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Polo Masculina Básica Alta Qualidade',
+      nome: 'Show The Calling Latin America Tour',
       imagem: 'assets/produtos/produto5.png',
-      preco: 37.80,
+      preco: 229.90,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Polo Masculina Básica Alta Qualidade',
+      nome: 'Show Bruce Dickinson The Mandrake Project',
       imagem: 'assets/produtos/produto6.png',
-      preco: 49.99,
+      preco: 269.99,
       quantidade: 0
     },
 
     {
-      nome: 'Camiseta Polo Basica Masculina Malwee',
+      nome: 'Show Paul McCartney Got Back',
       imagem: 'assets/produtos/produto7.png',
-      preco: 69.99,
+      preco: 300.00,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Gola Polo Red Bull F1 Malha Piquet',
-      imagem: 'assets/produtos/produto8.png',
-      preco: 69.90,
-      quantidade: 0
-    },
-
-    {
-      nome: 'Camisa Térmica Voker Academia Proteção Solar Uv Dry Fit',
+      nome: 'Peça Dilatados Teatro das Artes',
       imagem: 'assets/produtos/produto9.png',
-      preco: 33.90,
+      preco: 60.90,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Poliéster Masculina P/ Academia Exercícios',
+      nome: 'Peça o Futuro da Humanidade Teatro Vanucci',
       imagem: 'assets/produtos/produto10.png',
-      preco: 45.90,
+      preco: 40.50,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Dry Fit Academia Com Proteção Uv',
+      nome: 'Peça Comédia a Tapa Teatro Claro',
       imagem: 'assets/produtos/produto11.png',
-      preco: 56.30,
+      preco: 40.00,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Dry Fit Camuflada Esportiva Com Proteção Uv',
+      nome: 'Peça Festa da Comédia Carioca Teatro I Love Prio',
       imagem: 'assets/produtos/produto12.png',
-      preco: 56.90,
+      preco: 43.90,
       quantidade: 0
     },
 
     {
-      nome: 'Regata Oversized Masculina Brooklyn Bronx New York',
+      nome: 'Stand Up Comedy Porta Estreira Teatro Clara Nunes',
       imagem: 'assets/produtos/produto13.png',
-      preco: 69.90,
+      preco: 50.90,
       quantidade: 0
     },
 
     {
-      nome: 'Longline Masculina Regata Kings Rei Rainha Mcd Cartas Swag',
+      nome: 'Stand Up Comedy Web Bullying Teatro Clara Nunes',
       imagem: 'assets/produtos/produto14.png',
-      preco: 78.90,
+      preco: 70.90,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Regata Longline Floral Naipe Carta Mcd Poker',
-      imagem: 'assets/produtos/produto15.png',
-      preco: 69.90,
-      quantidade: 0
-    },
-
-    {
-      nome: 'Regata Estampada Hombre Caveira Mexicana',
+      nome: 'Filme Nosso Lar os Mensageiros 2',
       imagem: 'assets/produtos/produto16.png',
-      preco: 44.90,
+      preco: 44.00,
       quantidade: 0
     },
 
     {
-      nome: 'Calça Ogochi Masculina Bolso Slim Fit',
+      nome: 'Filme os Mamonas Assassinas',
       imagem: 'assets/produtos/produto17.png',
-      preco: 220.00,
+      preco: 36.00,
       quantidade: 0
     },
 
     {
-      nome: 'Calça Masculina Alfaiataria Em Oxford Sem Elastano',
-      imagem: 'assets/produtos/produto18.png',
-      preco: 70.00,
-      quantidade: 0
-    },
-
-    {
-      nome: 'Calça Cargo Dazzling Masculina',
+      nome: 'Filme Mergulho Noturno',
       imagem: 'assets/produtos/produto19.png',
-      preco: 130.00,
+      preco: 36.00,
       quantidade: 0
     },
 
     {
-      nome: 'Calça Jeans Masculina 8 Bolsos Command Ártico',
+      nome: 'Filme Meninas Malvadas',
       imagem: 'assets/produtos/produto20.png',
-      preco: 170.00,
+      preco: 44.00,
       quantidade: 0
     },
 
     {
-      nome: 'Bermuda Cargo Dragon Tática Masculina 8 Bolsos Rip Stop',
+      nome: 'Evento Gastrônomico Gastro Beer Rio',
       imagem: 'assets/produtos/produto21.png',
-      preco: 164.50,
+      preco: 20.80,
       quantidade: 0
     },
 
     {
-      nome: 'Bermuda Short Masculino Cargo Sarja Brim Camuflada Militar',
+      nome: 'Evento Gastrônomico Comida de Buteco',
       imagem: 'assets/produtos/produto22.png',
-      preco: 78.90,
+      preco: 35.90,
       quantidade: 0
     },
 
     {
-      nome: 'Bermuda Xadrez Masculina Bolsos Lateral Cargo',
+      nome: 'Festival Gastronômico Macaé Culinária Show',
       imagem: 'assets/produtos/produto23.png',
-      preco: 98.00,
+      preco: 25.00,
       quantidade: 0
     },
 
     {
-      nome: 'Bermuda Cargo Jeans Masculina Elástico E Cordão',
+      nome: 'Festival Gastronômico Miguel Pereira',
       imagem: 'assets/produtos/produto24.png',
-      preco: 118.50,
+      preco: 23.50,
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Carnaval Bloco das Gaúchas 10 anos',
       imagem: 'assets/produtos/produto25.png',
-      preco: 97.90,
+      preco: 40.90,
       quantidade: 0
     },
 
     {
-      nome: 'Sapatênis Olimp Masculino Original Tecido',
+      nome: 'Carnaval das Artes Marina da Glória',
       imagem: 'assets/produtos/produto26.png',
-      preco: 55.90,
+      preco: 60.00,
       quantidade: 0
     },
 
     {
-      nome: 'Sapato Casual Casamento Amarrar Oxford',
+      nome: 'Carnaval Privilège Festival',
       imagem: 'assets/produtos/produto27.png',
-      preco: 132.99,
+      preco: 140.99,
       quantidade: 0
     },
 
     {
-      nome: 'Sapato Social Masculino De Amarrar Café',
+      nome: 'Carnaval Esbórnia Rio',
       imagem: 'assets/produtos/produto28.png',
       preco: 69.90,
       quantidade: 0
     },
 
     {
-      nome: 'Sapato Social Masculino De Amarrar Café',
+      nome: 'Carnaval Carna Rildy Jockey Club',
       imagem: 'assets/produtos/produto29.png',
-      preco: 69.90,
+      preco: 120.90,
       quantidade: 0
     },
 
     {
-      nome: 'Sapato Social Masculino De Amarrar Café',
+      nome: 'Carnaval Rio 2024 Sambódromo',
       imagem: 'assets/produtos/produto30.png',
-      preco: 69.90,
+      preco: 547.00,
       quantidade: 0
     },
   ];

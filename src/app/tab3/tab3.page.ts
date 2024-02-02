@@ -13,130 +13,130 @@ export class Tab3Page implements OnInit {
   user: any; 
   produtosOriginais: ProdutoTab3[] = [
     {
-      nome: 'Camisa Social Slim Empório Colombo',
+      nome: 'Show Imagine Dragons Rock in Rio',
       imagem: 'assets/produtos/produtodesconto1.png',
-      precoOriginal: 79.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 355.00, // Preço antes do desconto
+      preco: 270.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Gola Polo Red Bull F1 Malha Piquet',
+      nome: 'Show Paul McCartney Got Back',
       imagem: 'assets/produtos/produtodesconto2.png',
-      precoOriginal: 69.90, // Preço antes do desconto
-      preco: 50.00, // Preço com desconto
+      precoOriginal: 300.00, // Preço antes do desconto
+      preco: 250.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Poliéster Masculina P/ Academia Exercícios',
+      nome: 'Show Ivete Sangalo Rock in Rio',
       imagem: 'assets/produtos/produtodesconto3.png',
-      precoOriginal: 45.90, // Preço antes do desconto
-      preco: 35.90, // Preço com desconto
+      precoOriginal: 250.99, // Preço antes do desconto
+      preco: 180.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Regata Oversized Masculina Brooklyn Bronx New York',
+      nome: 'Show Eric Clapton Jeunesse Arena',
       imagem: 'assets/produtos/produtodesconto4.png',
-      precoOriginal: 69.90, // Preço antes do desconto
-      preco: 49.90, // Preço com desconto
+      precoOriginal: 229.99, // Preço antes do desconto
+      preco: 170.90, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Calça Jeans Masculina 8 Bolsos Command Ártico',
+      nome: 'Peça Dilatados Teatro das Artes',
       imagem: 'assets/produtos/produtodesconto5.png',
-      precoOriginal: 170.00, // Preço antes do desconto
-      preco: 145.90, // Preço com desconto
+      precoOriginal: 60.90, // Preço antes do desconto
+      preco: 40.90, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Bermuda Short Masculino Cargo Sarja Brim Camuflada Militar',
+      nome: 'Peça Comédia a Tapa Teatro Claro',
       imagem: 'assets/produtos/produtodesconto6.png',
-      precoOriginal: 78.90, // Preço antes do desconto
-      preco: 59.00, // Preço com desconto
+      precoOriginal: 40.00, // Preço antes do desconto
+      preco: 35.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Peça Festa da Comédia Carioca Teatro I Love Prio',
       imagem: 'assets/produtos/produtodesconto7.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 43.90, // Preço antes do desconto
+      preco: 33.90, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Stand Up Comedy Web Bullying Teatro Clara Nunes',
       imagem: 'assets/produtos/produtodesconto8.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 70.90, // Preço antes do desconto
+      preco: 55.90, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Filme Nosso Lar os Mensageiros 2',
       imagem: 'assets/produtos/produtodesconto9.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 44.00, // Preço antes do desconto
+      preco: 22.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Filme os Mamonas Assassinas',
       imagem: 'assets/produtos/produtodesconto10.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 36.00, // Preço antes do desconto
+      preco: 18.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Filme Meninas Malvadas',
       imagem: 'assets/produtos/produtodesconto11.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 44.00, // Preço antes do desconto
+      preco: 22.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Evento Gastrônomico Gastro Beer Rio',
       imagem: 'assets/produtos/produtodesconto12.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 20.80, // Preço antes do desconto
+      preco: 15.80, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Festival Gastronômico Macaé Culinária Show',
       imagem: 'assets/produtos/produtodesconto13.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 25.00, // Preço antes do desconto
+      preco: 17.00, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Carnaval Bloco das Gaúchas 10 anos',
       imagem: 'assets/produtos/produtodesconto14.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 40.90, // Preço antes do desconto
+      preco: 32.90, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Carnaval Privilège Festival',
       imagem: 'assets/produtos/produtodesconto15.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 140.99, // Preço antes do desconto
+      preco: 100.99, // Preço com desconto
       quantidade: 0
     },
 
     {
-      nome: 'Sapatenis Masculino Polo Plus Original',
+      nome: 'Carnaval Rio 2024 Sambódromo',
       imagem: 'assets/produtos/produtodesconto16.png',
-      precoOriginal: 97.90, // Preço antes do desconto
-      preco: 59.90, // Preço com desconto
+      precoOriginal: 547.00, // Preço antes do desconto
+      preco: 340.00, // Preço com desconto
       quantidade: 0
     },
   ];
