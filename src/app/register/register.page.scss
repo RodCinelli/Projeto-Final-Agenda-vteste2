@@ -1,4 +1,5 @@
 ion-content {
+<<<<<<< HEAD
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -105,4 +106,56 @@ ion-content {
     max-width: 100%;
   }
   
+=======
+  background-color: #f4f4f4; /* Cor de fundo suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  form{
+    margin-top: 90px;
+  }
+  
+  ion-item {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 15px;
+  }
+  
+  ion-button {
+    border-radius: 4px;
+    --background: #4285F4; /* Cor azul do Google para o botão */
+    --background-hover: #357ae8; /* Cor ao passar o mouse */
+    --background-activated: #3367d6; /* Cor ao clicar */
+    --color: white;
+    margin-top: 15px;
+  }
+  
+  .create-account-text {
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+
+  .google-logo {
+    width: 20px; // Ajuste o tamanho conforme necessário
+    height: auto;
+    margin-right: 8px; // Espaço entre o logo e o texto
+  }
+
+  ion-input.custom {
+    --background: #373737;
+    --color: #fff;
+    --placeholder-color: #ddd;
+    --placeholder-opacity: 0.8;
+  
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+  }
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
   

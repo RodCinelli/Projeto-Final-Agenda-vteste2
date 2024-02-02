@@ -17,4 +17,8 @@ import { RegisterPage } from './register.page';
   ],
   declarations: [RegisterPage]
 })
+<<<<<<< HEAD
 export class RegisterPageModule {}
+=======
+export class RegisterPageModule {}
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440

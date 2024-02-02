@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ion-content {
     --ion-background-color: #201E1E;
 }
@@ -5,6 +6,41 @@ ion-content {
 ion-row {
     background-color: #201E1E;
     
+=======
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
+    height: 100px; /* Adapte conforme necessário */
+    background-color: #201E1E;
+  }
+  
+  .logo-text {
+    color: white;
+    
+    font-size: small;
+    
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+  }
+  
+  ion-icon {
+    color: white; /* Cor do ícone, adaptar conforme necessário */
+  }
+  
+
+ion-content{
+    --ion-background-color: #201E1E;
+}
+
+ion-row{
+/*     background-color: #201E1E; */
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
 }
 
 ion-item {
@@ -158,5 +194,25 @@ img {
     /* Ajuste para a largura máxima que o elemento deve ocupar */
     display: block;
     /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
-    margin-top: 20px;
+}
+
+.campo-pesquisa {
+    margin-top: -75px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); // Adiciona um fundo translúcido
+    border-radius: 5px; // Arredonda os cantos do campo de entrada
+    padding: 5px; // Adiciona algum espaço interno
+}
+
+#campo-pesquisa{
+
+    height: 300px;
+    background-color: #4b0082;
+    border-color: #4b0082;
+    border-width: 200px;
+}
+
+ion-list{
+    margin-top: -35px;
 }

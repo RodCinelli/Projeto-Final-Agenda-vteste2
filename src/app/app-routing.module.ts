@@ -38,10 +38,13 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+<<<<<<< HEAD
   },
   {
   path: 'premium-modal',
     loadChildren: () => import('./premium-modal/premium-modal.module').then( m => m.PremiumModalPageModule)
+=======
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
   }
 
 

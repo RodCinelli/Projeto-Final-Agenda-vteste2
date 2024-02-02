@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+<<<<<<< HEAD
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import { Observable } from 'rxjs';
 import { EventEmitter } from '@angular/core';
+=======
+import firebase from 'firebase/compat/app';
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+<<<<<<< HEAD
   // Adicione o EventEmitter
   public userBecamePremium = new EventEmitter<void>();
 
@@ -37,11 +42,15 @@ export class AuthService {
         throw new Error('Falha ao fazer upload e atualizar o avatar.');
     }
   }
+=======
+  constructor(private afAuth: AngularFireAuth) { }
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
 
   loginWithEmail(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
+<<<<<<< HEAD
   async registerWithEmail(email: string, password: string, imageFile: File) {
     const credential = await this.afAuth.createUserWithEmailAndPassword(email, password);
     if (credential.user) {
@@ -58,6 +67,10 @@ export class AuthService {
       await userRef.set(userData, { merge: true });
     }
     return credential;
+=======
+  registerWithEmail(email: string, password: string) {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
   }
 
   loginWithGoogle() {
@@ -65,6 +78,10 @@ export class AuthService {
   }
 
   registerWithGoogle() {
+<<<<<<< HEAD
+=======
+    // O método signInWithPopup é usado tanto para login quanto para registro com o Google
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
     return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
@@ -72,6 +89,7 @@ export class AuthService {
     return this.afAuth.signOut();
   }
 
+<<<<<<< HEAD
   async getCurrentUserId(): Promise<string | undefined> {
     const user = await this.afAuth.currentUser;
     return user?.uid;
@@ -132,4 +150,7 @@ export class AuthService {
       this.userBecamePremium.emit();
     }
   }
+=======
+  // ... Outros métodos úteis como verificar status de autenticação
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
 }

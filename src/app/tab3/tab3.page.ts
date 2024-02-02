@@ -10,7 +10,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page implements OnInit {
+<<<<<<< HEAD
   user: any; 
+=======
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
   produtosOriginais: ProdutoTab3[] = [
     {
       nome: 'Camisa Social Slim Empório Colombo',
@@ -67,6 +70,7 @@ export class Tab3Page implements OnInit {
       preco: 59.90, // Preço com desconto
       quantidade: 0
     },
+<<<<<<< HEAD
 
     {
       nome: 'Sapatenis Masculino Polo Plus Original',
@@ -139,6 +143,8 @@ export class Tab3Page implements OnInit {
       preco: 59.90, // Preço com desconto
       quantidade: 0
     },
+=======
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
   ];
 
   produtos: ProdutoTab3[] = [];
@@ -151,6 +157,7 @@ export class Tab3Page implements OnInit {
   ) {}
 
   ngOnInit() {
+<<<<<<< HEAD
     this.loadProducts();
     this.authService.userBecamePremium.subscribe(() => {
       this.loadUserProfile();
@@ -172,6 +179,8 @@ export class Tab3Page implements OnInit {
   }
   
   loadProducts() {
+=======
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
     this.produtos = [...this.produtosOriginais];
   }
 
@@ -248,4 +257,8 @@ export class Tab3Page implements OnInit {
     });
     toast.present();
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440

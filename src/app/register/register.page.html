@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-content>
 
   <br>
@@ -18,18 +19,40 @@
 
   <form (submit)="register()" class="custom-form">
       <ion-input type="email" [(ngModel)]="user.email" name="email" aria-label="Custom input"
+=======
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (submit)="register()">
+
+      <ion-input type="email" [(ngModel)]="user.email" name="email"
+      aria-label="Custom input"
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
       placeholder="Email"
       class="custom"
       position="left"
       [maxlength]="20"></ion-input>
+<<<<<<< HEAD
     <br>
 
       <ion-input type="password" [(ngModel)]="user.password" name="password" aria-label="Custom input"
+=======
+
+<br>
+
+      <ion-input type="password" [(ngModel)]="user.password" name="password"
+      aria-label="Custom input"
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
       placeholder="Senha"
       class="custom"
       position="left"
       [maxlength]="20"></ion-input>
 
+<<<<<<< HEAD
     <ion-button expand="full" type="submit" class="ion-margin-top">Criar Conta</ion-button>
 
   <ion-button expand="full" color="secondary" (click)="registerWithGoogle()">
@@ -41,3 +64,16 @@
 
   <ion-button (click)="voltarParaLogin()">Voltar</ion-button>
 </ion-content>
+=======
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Criar Conta</ion-button>
+  </form>
+
+  <ion-button expand="full" color="secondary" (click)="registerWithGoogle()">
+    <img src="assets/logo/google-logo.png" alt="Google Logo" class="google-logo">
+    Registrar com Google
+  </ion-button>
+
+  <ion-button (click)="voltarParaHome()">Voltar</ion-button>
+</ion-content>
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440

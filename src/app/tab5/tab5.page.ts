@@ -69,4 +69,8 @@ export class Tab5Page implements OnInit {
   irParaCompras() {
     this.navCtrl.navigateForward('/tabs/tab2'); // Certifique-se de que este é o caminho correto para a Tab2Page
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
