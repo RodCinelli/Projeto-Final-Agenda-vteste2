@@ -7,11 +7,8 @@ import { ToastController } from '@ionic/angular';
   selector: 'app-login',
   templateUrl: 'login.page.html',
   styleUrls: ['login.page.scss'],
-<<<<<<< HEAD
-=======
 
   
->>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
 })
 export class LoginPage {
   user = { email: '', password: '' };
@@ -80,11 +77,7 @@ export class LoginPage {
   voltarParaHome() {
     this.router.navigateByUrl('/tabs/tab1'); // Substitua '/tabs/tab1' pelo caminho correto para a sua página Home
   }  
-<<<<<<< HEAD
-}
-=======
 }
 
 
 
->>>>>>> f9ceda96a349b2382d9349c9773e820774fff440
