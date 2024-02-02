@@ -28,7 +28,7 @@ export class LoginPage {
     });
     toast.present();
   }
-
+   
   login() {
     if (!this.user.email || !this.user.password) {
       this.showToast('Por favor, preencha todos os campos.', 'warning');
