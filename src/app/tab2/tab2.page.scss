@@ -17,7 +17,7 @@ ion-item {
 }
 
 ion-thumbnail {
-    --size: 100px;
+    --size: 160px;
     /* Tamanho do thumbnail */
     display: flex;
     justify-content: center;
@@ -25,14 +25,13 @@ ion-thumbnail {
 }
 
 img {
-    max-width: 100%;
+    max-width: 160%;
     /* Garante que a imagem não exceda o tamanho do thumbnail */
-    max-height: 100%;
+    max-height: 160%;
     /* Pode ser ajustado para manter a proporção da imagem */
     height: auto;
     /* Mantém a proporção da imagem */
 }
-
 
 .product-controls {
     display: flex;
@@ -49,6 +48,12 @@ img {
         padding: 0 10px;
     }
 }
+
+/*
+.produto-info h2 {
+    margin-bottom: 1em; /* Ajuste para o espaçamento desejado 
+}
+*/
 
 .campo-pesquisa {
     text-align: center;

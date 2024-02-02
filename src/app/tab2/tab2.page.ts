@@ -11,14 +11,14 @@ import { ProdutoTab2 } from '../models/produtotab2.model';
 export class Tab2Page implements OnInit {
   produtosOriginais: ProdutoTab2[] = [
     {
-      nome: 'Camisa Social Manga Longa Masculina Lisa Slim',
+      nome: 'Show Imagine Dragons Rock in Rio 2024',
       imagem: 'assets/produtos/produto1.png',
       preco: 90.99,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Social Slim Empório Colombo',
+      nome: 'Show Ed Sheeram Rock in Rio 2024',
       imagem: 'assets/produtos/produto2.png',
       preco: 79.90,
       quantidade: 0

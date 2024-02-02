@@ -18,7 +18,7 @@ ion-item {
 
 /* Aumentando o tamanho da thumbnail para destacar as ofertas */
 ion-thumbnail {
-    --size: 150px;
+    --size: 170px;
     /* Tamanho maior para ofertas */
     display: flex;
     justify-content: center;
@@ -27,8 +27,8 @@ ion-thumbnail {
 
 /* Garantindo que a imagem se ajuste ao novo tamanho da thumbnail */
 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 170%;
+    max-height: 170%;
     height: auto;
 }
 
@@ -55,6 +55,13 @@ img {
 .produto-info {
     color: #fff; /* Cor do texto, se necessário */
 }
+
+/*
+.produto-info .preco-original {
+    margin-top: 1em; 
+    display: block; 
+}
+*/
 
 .custom-button {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
