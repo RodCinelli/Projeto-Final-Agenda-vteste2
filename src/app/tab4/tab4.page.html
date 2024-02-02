@@ -1,18 +1,24 @@
-<!-- Inserir Header Atualizado -->
-
+<!-- Título da Página -->
+<ion-row>
+  <ion-col id="nome">Perfil</ion-col>
+</ion-row>
 
 <ion-content>
-  
-  <ion-list class="perfil">
+  <ion-list>
     <ion-item>
       <ion-avatar slot="start">
-        <img src="assets/perfil/Eu.png"> <!-- Substitua pelo caminho do avatar do usuário -->
+        <img [src]="user.photoURL || 'assets/default-avatar.png'">
       </ion-avatar>
-      <ion-label>
-        <h2>Rodrigo Cinelli</h2>
-        <p>rodcinelli&#64;gmail.com</p>
-        <p>••••••</p>
-      </ion-label>
+      <ion-label style="width: 100px;">
+        <h2>{{ user.email }}</h2>
+        <p>{{ user.accountType | uppercase }} Account</p> <!-- Adicione esta linha para mostrar o tipo de conta -->
+        <p *ngIf="isUserLoggedIn">{{ senhaCriptografada }}</p>
+      </ion-label>      
+    </ion-item>
+    <!-- Outros itens... -->
+    <ion-item *ngIf="user.accountType === 'free'" (click)="openPremiumModal()">
+      <ion-icon name="star" slot="start"></ion-icon> <!-- Adicione um ícone se quiser -->
+      Assinar conta premium
     </ion-item>
     <ion-item lines="none" detail (click)="irParaCarrinho()">
       <ion-icon name="cart" slot="start"></ion-icon>

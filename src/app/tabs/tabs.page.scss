@@ -1,5 +1,5 @@
 .tabs {
-    --ion-background-color: #111010;
+    --ion-background-color: #000000;
 }
 
 .icone {
@@ -26,11 +26,17 @@ ion-label:hover, ion-label:focus {
 }
 
 ion-tab-bar {
+    background-color: #111010;
     /* border: 3px solid #B05DFF; */ /* Aumenta a espessura da borda e muda a cor para vermelho */
     border-radius: 0px; /* Mantém os cantos da borda quadrados */
     padding: 10px; /* Mantém o espaço entre os ícones e a borda */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra à barra */
 }
+
+ion-tab-button{
+    background-color: #111010;
+}
+
 
 /* Assegurando que a cor dos ícones permaneça consistente */
 ion-icon {

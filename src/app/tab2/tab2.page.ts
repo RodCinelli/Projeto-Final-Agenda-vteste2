@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { CarrinhoService } from '../carrinho.service'; // Ajuste o caminho conforme necessário
 import { ProdutoTab2 } from '../models/produtotab2.model';
@@ -8,17 +8,17 @@ import { ProdutoTab2 } from '../models/produtotab2.model';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
 })
-export class Tab2Page {
-  produtos: ProdutoTab2[] = [
+export class Tab2Page implements OnInit {
+  produtosOriginais: ProdutoTab2[] = [
     {
-      nome: 'Camisa Social Manga Longa Masculina Lisa Slim',
+      nome: 'Show Imagine Dragons Rock in Rio 2024',
       imagem: 'assets/produtos/produto1.png',
       preco: 90.99,
       quantidade: 0
     },
 
     {
-      nome: 'Camisa Social Slim Empório Colombo',
+      nome: 'Show Ed Sheeram Rock in Rio 2024',
       imagem: 'assets/produtos/produto2.png',
       preco: 79.90,
       quantidade: 0
@@ -205,12 +205,33 @@ export class Tab2Page {
       preco: 69.90,
       quantidade: 0
     },
+
+    {
+      nome: 'Sapato Social Masculino De Amarrar Café',
+      imagem: 'assets/produtos/produto29.png',
+      preco: 69.90,
+      quantidade: 0
+    },
+
+    {
+      nome: 'Sapato Social Masculino De Amarrar Café',
+      imagem: 'assets/produtos/produto30.png',
+      preco: 69.90,
+      quantidade: 0
+    },
   ];
+  
+  produtos: ProdutoTab2[] = [];
+  textoPesquisa = '';
 
   constructor(
     private carrinhoService: CarrinhoService,
     private toastController: ToastController
   ) {}
+
+  ngOnInit() {
+    this.produtos = [...this.produtosOriginais];
+  }
 
   incrementarProduto(index: number) {
     this.produtos[index].quantidade++;
@@ -222,6 +243,25 @@ export class Tab2Page {
     }
   }
 
+  pesquisar() {
+    if (this.textoPesquisa.trim().length === 0) {
+      this.mostrarMensagemVazio();
+      this.produtos = [...this.produtosOriginais];
+    } else {
+      this.produtos = this.produtosOriginais.filter(produto => produto.nome.toLowerCase().includes(this.textoPesquisa.toLowerCase()));
+    }
+  }
+  
+  async mostrarMensagemVazio() {
+    const toast = await this.toastController.create({
+      message: 'O campo de busca está vazio',
+      duration: 2000,
+      position: 'top',
+      color: 'warning'
+    });
+    toast.present();
+  }
+  
   async adicionarAoCarrinho(produto: ProdutoTab2) {
     if (produto.quantidade > 0) {
       this.carrinhoService.adicionarAoCarrinho(produto);
@@ -242,4 +282,4 @@ export class Tab2Page {
       toast.present();
     }
   }
-}  
+}

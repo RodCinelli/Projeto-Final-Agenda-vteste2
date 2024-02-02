@@ -1,42 +1,8 @@
-ion-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999; /* Ajuste o valor se necessário */
-    background-color: #201E1E;
-  }
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
-    height: 100%; /* Adapte conforme necessário */
-  }
-  
-  .logo-text {
-    color: white;
-    
-    font-size: small;
-    
-  }
-  
-  .logo {
-    max-width: 100px;
-    margin-right: auto;
-  }
-  
-  ion-icon {
-    color: white; /* Cor do ícone, adaptar conforme necessário */
-  }
-  
-
-
 ion-content{
     --ion-background-color: #201E1E;
 }
 
 ion-row{
-    margin-top: 80px;
     background-color: #201E1E;
 }
 
@@ -52,7 +18,7 @@ ion-item {
 
 /* Aumentando o tamanho da thumbnail para destacar as ofertas */
 ion-thumbnail {
-    --size: 150px;
+    --size: 170px;
     /* Tamanho maior para ofertas */
     display: flex;
     justify-content: center;
@@ -61,8 +27,8 @@ ion-thumbnail {
 
 /* Garantindo que a imagem se ajuste ao novo tamanho da thumbnail */
 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 170%;
+    max-height: 170%;
     height: auto;
 }
 
@@ -90,6 +56,13 @@ img {
     color: #fff; /* Cor do texto, se necessário */
 }
 
+/*
+.produto-info .preco-original {
+    margin-top: 1em; 
+    display: block; 
+}
+*/
+
 .custom-button {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Suaviza as transições para transformação e sombra */
@@ -108,6 +81,36 @@ img {
 
 .custom-button:hover ion-icon, .custom-button:focus ion-icon {
     color: #fff; /* Muda a cor do ícone ao passar o mouse */
+}
+
+.campo-pesquisa {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); // Fundo translúcido
+    border-radius: 5px; // Cantos arredondados
+    padding: 5px; // Espaço interno
+    font-size: 16px; // Tamanho maior da fonte
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); // Sombra para destaque
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; // Animação ao focar
+
+    &:focus {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); // Sombra maior ao focar
+        background-color: rgba(255, 255, 255, 0.2); // Fundo um pouco mais opaco ao focar
+    }
+
+    &::placeholder {
+        color: #ccc; // Cor do placeholder
+        font-style: italic; // Estilo do placeholder
+    } 
+}
+
+.campo-pesquisa::after {
+    content: '🔍'; /* Substitua pelo ícone de sua preferência */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Estilos adicionais para o ícone */
 }
 
 #nome {

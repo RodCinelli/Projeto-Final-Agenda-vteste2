@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.premium-toolbar {
+    background-color: #4169E1;
+    color: #fff;
+}
+
+.premium-title, .premium-large-title {
+    color: #4169E1;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-right: 27px;
+}
+
+.premium-content {
+    background-color: #f1f1f1;
+}
+
+.premium-card {
+    margin-top: 50px;
+    background-color: #f1f1f1;
+    color: #4a148c;
+}
+
+.premium-text {
+    font-size: 18px;
+    color: #4a148c;
+    font-family: 'Roboto', sans-serif;
+}
+
+.premium-button {
+    background-color: #4169E1;
+    color: #fff;
+    border-radius: 25px; // Arredonda os cantos do botão
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 16px; // Ajusta o tamanho do texto do botão
+    transition: background-color 0.3s ease; // Adiciona uma transição suave ao mudar a cor de fundo
+}
+
+.premium-button:hover {
+    background-color: #365f9c; // Muda a cor de fundo ao passar o mouse
+}
+
+.premium-button:active {
+    background-color: #2a456e; // Muda a cor de fundo ao clicar
+}
+
+ion-back-button {
+    --color: #fff; // Cor do ícone
+    --icon-color: #fff; // Cor do ícone
+    --background: #4169E1; // Cor de fundo
+    --background-hover: #365f9c; // Cor de fundo ao passar o mouse
+    --background-activated: #2a456e; // Cor de fundo ao clicar
+}

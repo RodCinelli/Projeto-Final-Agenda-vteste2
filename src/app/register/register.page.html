@@ -1,0 +1,43 @@
+<ion-content>
+
+  <br>
+
+<h1 class="titulo">Cadastre-se</h1>
+
+<div class="avatar">
+
+<ion-item lines="none">
+  <ion-avatar slot="start" (click)="fileInput.click()">
+    <img [src]="avatarUrl || 'assets/default-avatar.png'" />
+  </ion-avatar>
+  <ion-label>Selecione um Avatar</ion-label>
+  <input type="file" #fileInput (change)="uploadAvatar($event)" accept="image/*" hidden>
+</ion-item>
+
+</div>
+
+  <form (submit)="register()" class="custom-form">
+      <ion-input type="email" [(ngModel)]="user.email" name="email" aria-label="Custom input"
+      placeholder="Email"
+      class="custom"
+      position="left"
+      [maxlength]="20"></ion-input>
+    <br>
+
+      <ion-input type="password" [(ngModel)]="user.password" name="password" aria-label="Custom input"
+      placeholder="Senha"
+      class="custom"
+      position="left"
+      [maxlength]="20"></ion-input>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Criar Conta</ion-button>
+
+  <ion-button expand="full" color="secondary" (click)="registerWithGoogle()">
+    <img src="assets/logo/google-logo.png" alt="Google Logo" class="google-logo">
+    Cadastrar com Google
+  </ion-button>
+
+</form>
+
+  <ion-button (click)="voltarParaLogin()">Voltar</ion-button>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-content class="ion-padding">
+  <form (submit)="login()">
+
+    <h1 class="titulo">Faça seu Login</h1>
+    <br>
+
+      <ion-input type="email" [(ngModel)]="user.email" name="email" aria-label="Custom input"
+      placeholder="Email"
+      class="custom"
+      position="left"
+      [maxlength]="20"></ion-input>
+      <br>
+
+      <ion-input type="password" [(ngModel)]="user.password" name="password" aria-label="Custom input"
+      placeholder="Senha"
+      class="custom"
+      position="left"
+      [maxlength]="20"></ion-input>
+
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Login</ion-button>
+  </form>
+
+  <ion-button expand="full" color="secondary" (click)="loginWithGoogle()">
+    <img src="assets/logo/google-logo.png" alt="Google Logo" class="google-logo">
+    Login com Google
+  </ion-button>
+  
+  
+  <!-- Link para criar conta -->
+    <p class="create-account-text">
+      Não possui uma conta? <a (click)="navigateToRegister()">Clique aqui!</a>
+    </p>
+
+    <ion-button (click)="voltarParaHome()">Voltar</ion-button>
+</ion-content>
+

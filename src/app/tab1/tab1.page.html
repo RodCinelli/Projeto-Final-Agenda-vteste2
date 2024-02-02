@@ -1,34 +1,90 @@
 <ion-content>
+  <!-- Inserir o ícone de login aqui -->
 
-<br>
+  <ion-content>
 
-<div class="slide">
+    <swiper-container class="mySwiper" [autoplay]="{delay: 3000}">
 
-  <div class="photo-gallery" #photoGallery>
+        <swiper-slide><img src="assets/capa.png" alt="AgendaLocal"></swiper-slide>
+        <swiper-slide><a href="/tabs/tab2"><img src="assets/swiper/swiper2.png" alt="Algum de nossos produtos"></a></swiper-slide>
+        <swiper-slide><a href="/premium-modal"><img src="assets/swiper/swiper3.png" alt="Algum de nossos produtos"></a></swiper-slide>
+    </swiper-container>
 
-    <!-- Seta para Esquerda -->
-    <ion-icon name="chevron-back-circle" class="gallery-arrow left-arrow" (click)="previousImage()"></ion-icon>
-    <img src="assets/apresentacao/loja_masculina.png" alt="Imagem da Nossa loja" #galleryImage>
-    <img src="assets/apresentacao/roupas_masculinas.png" alt="Algum de nossos produtos" #galleryImage>
-    <img src="assets/apresentacao/roupas_masculinas2.png" alt="Algum de nossos produtos" #galleryImage>
-    <img src="assets/apresentacao/escolha_de_produtos.png" alt="Um cliente escolhendo produtos" #galleryImage>
-    <!-- Seta para Direita -->
-    <ion-icon name="chevron-forward-circle" class="gallery-arrow right-arrow" (click)="nextImage()"></ion-icon>
+    <h2 style="font-size: medium; margin-left: 19px;">Eventos em Destaque</h2>
 
-    <div class="carousel-indicators" style="margin-top: -13%;">
-      <span *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
-        (click)="showImage(i)"></span>
-    </div>
+    <swiper-container pagination="true">
 
-  </div>
+    <swiper-slide >
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto7.png" />
+          <ion-card-header>
+            <ion-card-title>McCartney</ion-card-title>
+            <ion-card-subtitle>Show</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
 
-  
 
-  <!-- Descrição da Loja -->
-  <div class="store-description">
-    <h2>Sobre a Cinelli Store:</h2>
-    <p>A Cinelli Store oferece uma ampla gama de roupas e calçados masculinos. Visite-nos para descobrir as últimas
-      tendências!</p>
-  </div>
-</div>
-</ion-content>
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto29.png" />
+          <ion-card-header>
+            <ion-card-title>Carna Rildy</ion-card-title>
+            <ion-card-subtitle>Festival</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </swiper-slide>
+
+
+    <swiper-slide >
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto3.png" />
+          <ion-card-header>
+            <ion-card-title>Ivete Sangalo</ion-card-title>
+            <ion-card-subtitle>Show</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto2.png"  />
+          <ion-card-header>
+            <ion-card-title>Ed Sheeran</ion-card-title>
+            <ion-card-subtitle>Show</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </swiper-slide>
+
+
+    <swiper-slide >
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto1.png" />
+          <ion-card-header>
+            <ion-card-title>Imagine Dragons</ion-card-title>
+            <ion-card-subtitle>Show</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+
+      <ion-col>
+        <ion-card>
+          <img src="assets/produtos/produto27.png" />
+          <ion-card-header>
+            <ion-card-title>Privilege</ion-card-title>
+            <ion-card-subtitle>Festival</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </swiper-slide>
+
+   
+</swiper-container>
+  </ion-content>

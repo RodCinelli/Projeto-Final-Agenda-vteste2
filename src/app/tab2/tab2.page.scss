@@ -1,37 +1,10 @@
-
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
-    height: 100px; /* Adapte conforme necessário */
-    background-color: #201E1E;
-  }
-  
-  .logo-text {
-    color: white;
-    
-    font-size: small;
-    
-  }
-  
-  .logo {
-    width: 100px;
-    height: 100px;
-    margin-right: auto;
-  }
-  
-  ion-icon {
-    color: white; /* Cor do ícone, adaptar conforme necessário */
-  }
-  
-
-ion-content{
+ion-content {
     --ion-background-color: #201E1E;
 }
 
-ion-row{
+ion-row {
     background-color: #201E1E;
+    
 }
 
 ion-item {
@@ -45,7 +18,7 @@ ion-item {
 }
 
 ion-thumbnail {
-    --size: 100px;
+    --size: 160px;
     /* Tamanho do thumbnail */
     display: flex;
     justify-content: center;
@@ -53,14 +26,13 @@ ion-thumbnail {
 }
 
 img {
-    max-width: 100%;
+    max-width: 160%;
     /* Garante que a imagem não exceda o tamanho do thumbnail */
-    max-height: 100%;
+    max-height: 160%;
     /* Pode ser ajustado para manter a proporção da imagem */
     height: auto;
     /* Mantém a proporção da imagem */
 }
-
 
 .product-controls {
     display: flex;
@@ -78,12 +50,51 @@ img {
     }
 }
 
+/*
+.produto-info h2 {
+    margin-bottom: 1em; /* Ajuste para o espaçamento desejado 
+}
+*/
+
+.campo-pesquisa {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); // Fundo translúcido
+    border-radius: 5px; // Cantos arredondados
+    padding: 5px; // Espaço interno
+    font-size: 16px; // Tamanho maior da fonte
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); // Sombra para destaque
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; // Animação ao focar
+
+    &:focus {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); // Sombra maior ao focar
+        background-color: rgba(255, 255, 255, 0.2); // Fundo um pouco mais opaco ao focar
+    }
+
+    &::placeholder {
+        color: #ccc; // Cor do placeholder
+        font-style: italic; // Estilo do placeholder
+    }
+}
+
+.campo-pesquisa::after {
+    content: '🔍'; /* Substitua pelo ícone de sua preferência */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Estilos adicionais para o ícone */
+}
+
+
 .product-controls ion-button {
-    color: #fff; /* Cor do ícone, se necessário */
+    color: #fff;
+    /* Cor do ícone, se necessário */
 }
 
 .produto-info {
-    color: #fff; /* Cor do texto, se necessário */
+    color: #fff;
+    /* Cor do texto, se necessário */
 }
 
 .custom-button {
@@ -92,27 +103,35 @@ img {
 }
 
 .custom-button ion-icon {
-    font-size: 1.8em; /* Ajusta o tamanho do ícone */
+    font-size: 1.8em;
+    /* Ajusta o tamanho do ícone */
     transition: color 0.3s ease;
     /* Suaviza a transição da cor */
 }
 
-.custom-button:hover, .custom-button:focus {
-    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do botão */
-    box-shadow: 0 0 10px #fff; /* Adiciona uma sombra para destaque */
+.custom-button:hover,
+.custom-button:focus {
+    transform: scale(1.1);
+    /* Aumenta ligeiramente o tamanho do botão */
+    box-shadow: 0 0 10px #fff;
+    /* Adiciona uma sombra para destaque */
 }
 
-.custom-button:hover ion-icon, .custom-button:focus ion-icon {
-    color: #fff; /* Muda a cor do ícone ao passar o mouse */
+.custom-button:hover ion-icon,
+.custom-button:focus ion-icon {
+    color: #fff;
+    /* Muda a cor do ícone ao passar o mouse */
 }
 
 
 .preco-produto {
-    color: #32CD32; /* Substitua #corDoTexto pela cor do texto desejada */   
+    color: #32CD32;
+    /* Substitua #corDoTexto pela cor do texto desejada */
 }
 
 .quantidade-produto {
-    color: #32CD32; /* Esta é a tonalidade de verde que você mencionou */
+    color: #32CD32;
+    /* Esta é a tonalidade de verde que você mencionou */
     /* Aqui você pode adicionar outras propriedades de estilo, se necessário */
 }
 

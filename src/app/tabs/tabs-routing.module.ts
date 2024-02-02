@@ -32,6 +32,7 @@ const routes: Routes = [
         path: 'tabs/cad-produtos',
         loadChildren: () => import('../cad-produtos/cad-produtos.module').then(m => m.CadProdutosPageModule)
       },
+      
       {
         path: '',
         redirectTo: '/tabs/tab1',

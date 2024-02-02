@@ -1,48 +1,31 @@
-import { Component, QueryList, ViewChildren, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, QueryList, ViewChildren, OnInit, ElementRef } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router'; // Importar Router
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page implements AfterViewInit {
+export class Tab1Page implements OnInit{
   @ViewChildren('galleryImage') images!: QueryList<ElementRef>;
   currentImageIndex: number = 0;
   likes: number = 0;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngAfterViewInit() {
-    // Inicializar a exibição da primeira imagem após a view ser inicializada.
-    const imagesArray = this.images.toArray();
-    // Definir todas as imagens para display: none
-    imagesArray.forEach(image => (image.nativeElement.style.display = 'none'));
-    // Exceto a primeira imagem.
-    if (imagesArray.length) {
-      imagesArray[this.currentImageIndex].nativeElement.style.display = 'block';
-    }
+  abrirLogin() {
+    this.router.navigateByUrl('/login'); // Redireciona para a página de login
   }
 
-  // Navegar para a próxima imagem
-  nextImage() {
-    this.changeImage((this.currentImageIndex + 1) % this.images.length);
-  }
-
-  // Navegar para a imagem anterior
-  previousImage() {
-    this.changeImage((this.currentImageIndex - 1 + this.images.length) % this.images.length);
-  }
-
-  // Mostrar uma imagem específica com base no índice
-  showImage(index: number) {
-    this.changeImage(index);
-  }
-
-  // Alterar a imagem visível
-  private changeImage(newIndex: number) {
-    const imagesArray = this.images.toArray();
-    imagesArray[this.currentImageIndex].nativeElement.style.display = 'none';
-    this.currentImageIndex = newIndex;
-    imagesArray[this.currentImageIndex].nativeElement.style.display = 'block';
-  }
+ngOnInit(): void {
+  const swiper = new Swiper('.swiper', {
+    autoplay: {
+      delay: 5000,
+    },
+   }); 
 }
+
+ 
+} 

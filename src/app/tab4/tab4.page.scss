@@ -1,52 +1,59 @@
-.perfil{
+ion-content{
     --ion-background-color: #201E1E;
-    margin-top: 80px;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0 15px; /* Adicionei um espaçamento lateral para a frase ficar mais à esquerda */
-    height: 100%; /* Adapte conforme necessário */
-  }
-  
-  .logo-text {
-    color: white;
-    
-    font-size: small;
-    
-  }
-  
-  .logo {
-    max-width: 100px;
-    margin-right: auto;
-  }
-  
-  ion-icon {
-    color: white; /* Cor do ícone, adaptar conforme necessário */
-  }
+ion-row {
+    background-color: #201E1E;
+}
+
+#nome {
+    background-color: #4b0082;
+    /* ou qualquer outra cor que você esteja usando */
+    color: #fff;
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Peso da fonte */
+    text-align: center;
+    /* Alinhamento do texto */
+    padding: 5px 20px;
+    /* Reduzir o espaçamento interno (vertical horizontal) */
+    margin: 10px auto;
+    /* Margem superior e inferior reduzida, centralizado horizontalmente */
+    border-radius: 4px;
+    /* Borda suavemente arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para profundidade */
+    max-width: 90%;
+    /* Ajuste para a largura máxima que o elemento deve ocupar */
+    display: block;
+    /* Isso vai permitir que 'margin: auto' funcione para centralizar horizontalmente */
+    margin-top: 20px;
+}
+
 
 .background-image-container {
-    background: url('/assets/apresentacao/loja_masculina.png') no-repeat center center / cover;
+    background: url('/assets/capa.png') no-repeat center center / cover;
     border-radius: 15px;
     width: 90%;
-    height: 550px;
-    margin: 20px auto;
+    height: 300px;
+    margin: 10px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 ion-item {
     color: #FFF;
 font-family: Inter;
-font-size: 12px;
+font-size: 15px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 width: 111%;
     --background: #373636;
     /* Cor de fundo semi-transparente */
-    /* Cor de fundo do item */
-    --border-radius: 8px;
+    
     /* Cantos arredondados */
     --margin-bottom: 10px;
     /* Espaçamento entre os itens */
@@ -92,5 +99,5 @@ ion-icon {
     /* Cor dos ícones */
     margin-right: 8px;
     /* Espaçamento à direita dos ícones */
+    
 }
-
